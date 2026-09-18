@@ -26,6 +26,7 @@ function __showBoot(){
   }catch(_){}
 }
 window.addEventListener("error",function(e){
+  if(!e.message){ return; }               /* ไฟล์ภายนอกโหลดไม่ได้ — ไม่ใช่ error ของสคริปต์ */
   window.__BOOTLOG.push((e.message||"error")+"  [บรรทัด "+(e.lineno||"?")+":"+(e.colno||"?")+"]");
   __showBoot();
 },true);
@@ -34,6 +35,7 @@ window.addEventListener("unhandledrejection",function(e){
   __showBoot();
 });
 window.__INLINE_OK=true;
+window.__BUILD="STATIC-2026-09-18-A";
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -72,7 +74,7 @@ window.__INLINE_OK=true;
 html,body{height:100%}
 body{margin:0;background:var(--ground);color:var(--ink);
   font-family:"IBM Plex Sans Thai","Noto Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
-  font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+  font-size:16.5px;line-height:1.6;-webkit-text-size-adjust:100%}
 h1,h2,h3,.disp{font-family:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;text-wrap:balance;margin:0}
 .num{font-variant-numeric:tabular-nums}
 button,input,select,textarea{font:inherit;color:inherit}
@@ -80,7 +82,7 @@ a{color:var(--accent)}
 
 /* ---------- shell ---------- */
 .shell{display:flex;min-height:100%}
-.sidebar{position:fixed;inset:0 auto 0 0;width:236px;z-index:40;
+.sidebar{position:fixed;inset:0 auto 0 0;width:262px;z-index:40;
   background:var(--brand);color:var(--brand-ink);display:flex;flex-direction:column;
   padding:calc(env(safe-area-inset-top,0px) + 14px) 12px calc(env(safe-area-inset-bottom,0px) + 12px);
   transition:width .18s ease, transform .22s ease;overflow:hidden}
@@ -93,8 +95,8 @@ a{color:var(--accent)}
 .brandtxt span{display:block;font-size:11px;opacity:.72;white-space:nowrap}
 .shell.collapsed .brandtxt,.shell.collapsed .navlabel,.shell.collapsed .sidefoot{display:none}
 nav{display:flex;flex-direction:column;gap:2px}
-.navbtn{display:flex;align-items:center;gap:11px;width:100%;padding:10px;border:0;border-radius:8px;
-  background:transparent;color:var(--brand-ink);cursor:pointer;text-align:left;font-size:14.5px}
+.navbtn{display:flex;align-items:center;gap:11px;width:100%;padding:11px 10px;border:0;border-radius:8px;
+  background:transparent;color:var(--brand-ink);cursor:pointer;text-align:left;font-size:15.5px}
 .navbtn:hover{background:rgba(255,255,255,.08)}
 .navbtn[aria-current="true"]{background:rgba(255,255,255,.14);font-weight:600}
 .navbtn svg{flex:0 0 19px;width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -104,19 +106,19 @@ nav{display:flex;flex-direction:column;gap:2px}
   border-radius:8px;padding:7px;cursor:pointer;font-size:12.5px}
 .scrim{display:none}
 
-main{flex:1;min-width:0;margin-left:236px;transition:margin-left .18s ease}
+main{flex:1;min-width:0;margin-left:262px;transition:margin-left .18s ease}
 .shell.collapsed main{margin-left:62px}
 .wrap{padding:0 20px 56px;max-width:1180px}
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ground);
   padding:16px 20px 12px;border-bottom:1px solid var(--line);margin-bottom:18px;
   display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
-header.top h1{font-size:21px;letter-spacing:-.2px}
+header.top h1{font-size:23px;letter-spacing:-.2px}
 header.top p{margin:2px 0 0;color:var(--ink-3);font-size:12.5px}
 .top-actions{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .menubtn{display:none}
 
 /* ---------- atoms ---------- */
-.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 13px;cursor:pointer;font-size:13.5px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:9px 15px;cursor:pointer;font-size:14.5px}
 .btn:hover{border-color:var(--ink-3)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
 .btn.primary:hover{filter:brightness(1.06)}
@@ -125,31 +127,31 @@ header.top p{margin:2px 0 0;color:var(--ink-3);font-size:12.5px}
 .pad{padding:16px}
 .grid{display:grid;gap:14px}
 .eyebrow{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
-.pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:500;white-space:nowrap}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:13px;padding:3px 10px;border-radius:999px;font-weight:500;white-space:nowrap}
 .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .p-ok{color:var(--ok);background:var(--ok-bg)} .p-warn{color:var(--warn);background:var(--warn-bg)}
 .p-crit{color:var(--crit);background:var(--crit-bg)} .p-idle{color:var(--idle);background:var(--idle-bg)}
-label.f{display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:5px;font-weight:500}
+label.f{display:block;font-size:14px;color:var(--ink-2);margin-bottom:5px;font-weight:500}
 label.f span{color:var(--crit)}
-.in{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2)}
+.in{width:100%;padding:11px 13px;font-size:16px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2)}
 .in:focus{outline:2px solid var(--accent);outline-offset:1px;background:var(--surface)}
 .hint{font-size:11.5px;color:var(--ink-3);margin-top:4px}
 .err{font-size:12px;color:var(--crit);margin-top:4px}
 .tablewrap{overflow-x:auto;border-radius:var(--r)}
-table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:720px}
-th{text-align:left;font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:760px}
+th{text-align:left;font-weight:600;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);
   padding:9px 10px;border-bottom:1px solid var(--line);background:var(--surface-2);position:sticky;top:0}
 td{padding:9px 10px;border-bottom:1px solid var(--line-2);vertical-align:middle}
 tbody tr:hover{background:var(--surface-2)}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px}
 .tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:13px 15px}
-.tile .k{font-size:11.5px;color:var(--ink-3);font-weight:600;letter-spacing:.04em}
-.tile .v{font-family:"Bai Jamjuree",sans-serif;font-size:27px;font-weight:600;line-height:1.15;letter-spacing:-.5px}
+.tile .k{font-size:12.5px;color:var(--ink-3);font-weight:600;letter-spacing:.04em}
+.tile .v{font-family:"Bai Jamjuree",sans-serif;font-size:31px;font-weight:600;line-height:1.15;letter-spacing:-.5px}
 .tile .s{font-size:11.5px;color:var(--ink-3)}
 .bar{height:7px;border-radius:99px;background:var(--line-2);overflow:hidden;margin-top:8px}
 .bar>i{display:block;height:100%;border-radius:99px;background:var(--accent)}
 .sec{margin:26px 0 12px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.sec h2{font-size:16.5px}
+.sec h2{font-size:18.5px}
 .sec .note{font-size:12px;color:var(--ink-3)}
 .chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
 .chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:12.5px;cursor:pointer}
@@ -190,7 +192,7 @@ svg.chart text{font-family:"IBM Plex Sans Thai",sans-serif;font-variant-numeric:
 .modal .box{background:var(--surface);border-radius:12px;max-width:820px;width:100%;max-height:88vh;overflow:auto;padding:18px}
 
 @media (max-width:860px){
-  .sidebar{transform:translateX(-100%);width:236px}
+  .sidebar{transform:translateX(-100%);width:262px}
   .shell.navopen .sidebar{transform:none}
   .shell.navopen .scrim{display:block;position:fixed;inset:0;background:rgba(10,14,12,.5);z-index:30}
   main,.shell.collapsed main{margin-left:0}
@@ -200,6 +202,22 @@ svg.chart text{font-family:"IBM Plex Sans Thai",sans-serif;font-variant-numeric:
   header.top{padding:14px 16px 11px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+
+/* ---------- ปรับขนาดตัวหนังสือ + แถบสี ---------- */
+:root{--fs:1}
+header.top,.wrap{zoom:var(--fs,1)}
+.rainbow{height:6px;border-radius:99px;margin:0 0 14px;
+  background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6),var(--c7))}
+.fsctl{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:9px;
+  background:var(--surface);overflow:hidden}
+.fsctl button{border:0;background:transparent;padding:7px 12px;cursor:pointer;font-size:15px;font-weight:700;line-height:1}
+.fsctl button:hover{background:var(--surface-2)}
+.fsctl span{font-size:12px;color:var(--ink-3);min-width:44px;text-align:center;font-variant-numeric:tabular-nums}
+.tile{border-top:4px solid var(--stripe,var(--accent))}
+.sec h2{position:relative;padding-left:13px}
+.sec h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:5px;border-radius:99px;background:var(--accent)}
+.card.stripe,.chartcard{border-left:4px solid var(--stripe,var(--line))}
 
 /* ---------- extras ---------- */
 .authbar{background:var(--crit-bg);border:1px solid var(--crit);border-left-width:4px;border-radius:var(--r);
@@ -306,7 +324,7 @@ tr.gone td b{text-decoration:line-through}
     </div>
     <nav id="nav"></nav>
     <div class="sidefoot">
-      <div>สัญญา บ.45/2569</div>
+      <div>สัญญา บ.45/2569 · <span id="buildtag">-</span></div>
       <div id="dbstate">กำลังเชื่อมฐานข้อมูล…</div>
     </div>
     <button class="collapse" id="collapse" type="button">ย่อแถบเมนู</button>
@@ -321,12 +339,18 @@ tr.gone td b{text-decoration:line-through}
         <p id="vsub">แผนติดตั้ง Solar Rooftop ระยะที่ 4 — กฟน.1</p>
       </div>
       <div class="top-actions">
+        <div class="fsctl" role="group" aria-label="ปรับขนาดตัวหนังสือ">
+          <button id="fsdn" type="button" title="ตัวหนังสือเล็กลง" aria-label="ตัวหนังสือเล็กลง">ก−</button>
+          <span id="fsval" class="num">100%</span>
+          <button id="fsup" type="button" title="ตัวหนังสือใหญ่ขึ้น" aria-label="ตัวหนังสือใหญ่ขึ้น">ก＋</button>
+        </div>
         <button class="btn" id="refreshbtn" type="button">รีเฟรช</button>
         <button class="btn" id="themebtn" type="button">ธีม</button>
         <button class="btn primary" id="gotoreport" type="button">+ แจ้งสถานะ</button>
       </div>
     </header>
     <div class="wrap">
+      <div class="rainbow no-print"></div>
       <div id="authbar" class="authbar no-print" hidden></div>
       <section id="v-overview"></section>
       <section id="v-report" hidden></section>
@@ -345,13 +369,13 @@ tr.gone td b{text-decoration:line-through}
    base = สถานะตั้งต้น ณ 18 ก.ย. 2026 : 1 = แล้วเสร็จ, 0 = ยังไม่ดำเนินการ, 0.5 = กำลังดำเนินการ
    ======================================================================= */
 const STAGES = [
-  {k:"survey",  n:"สำรวจประมาณการ", c:"var(--c1)"},
-  {k:"procure", n:"จัดซื้อ",         c:"var(--c2)"},
-  {k:"accy",    n:"ติดตั้งอุปกรณ์ประกอบ", c:"var(--c3)"},
-  {k:"main",    n:"ติดตั้งแผง/อินเวอร์เตอร์", c:"var(--c4)"},
-  {k:"permit",  n:"ขออนุญาตขนานเครื่อง", c:"var(--c5)"},
-  {k:"close",   n:"ปิดงาน", c:"var(--c6)"},
-  {k:"asset",   n:"ขึ้นทรัพย์สิน", c:"var(--c7)"}
+  {k:"survey",  n:"📐 สำรวจประมาณการ", c:"var(--c1)"},
+  {k:"procure", n:"🛒 จัดซื้อ",         c:"var(--c2)"},
+  {k:"accy",    n:"🔧 ติดตั้งอุปกรณ์ประกอบ", c:"var(--c3)"},
+  {k:"main",    n:"☀️ ติดตั้งแผง/อินเวอร์เตอร์", c:"var(--c4)"},
+  {k:"permit",  n:"📋 ขออนุญาตขนานเครื่อง", c:"var(--c5)"},
+  {k:"close",   n:"✅ ปิดงาน", c:"var(--c6)"},
+  {k:"asset",   n:"🏛️ ขึ้นทรัพย์สิน", c:"var(--c7)"}
 ];
 const S = (seq,name,prov,trip,recv,due,kwp,pv,owner,wbs,budget,accy,main)=>
   ({seq,name,prov,trip,recv,due,kwp,pv,owner,wbs,budget,
@@ -421,7 +445,7 @@ function siteStatus(site){
     .forEach(r=>{ st[r.stage] = r.status==="done"?1 : r.status==="progress"?0.5 : r.status==="issue"?-1 : 0; });
   return st;
 }
-const lvlPill=v=> v===1?['p-ok','แล้วเสร็จ'] : v===0.5?['p-warn','กำลังดำเนินการ'] : v===-1?['p-crit','มีปัญหา'] : ['p-idle','ยังไม่ดำเนินการ'];
+const lvlPill=v=> v===1?['p-ok','✅ แล้วเสร็จ'] : v===0.5?['p-warn','🔄 กำลังดำเนินการ'] : v===-1?['p-crit','⚠️ มีปัญหา'] : ['p-idle','⬜ ยังไม่ดำเนินการ'];
 
 /* ขั้นตอนใดของแห่งนี้ "มีหลักฐาน" (มีคนแจ้งพร้อมรูปในระบบ) แล้วบ้าง */
 function evidenceOf(site){
@@ -446,15 +470,15 @@ function proofMark(stage,done,hasProof){
 
 /* =======================================================================  NAV  */
 const VIEWS=[
-  {k:"overview", n:"ภาพรวมโครงการ", sub:"แผนติดตั้ง Solar Rooftop ระยะที่ 4 — กฟน.1",
+  {k:"overview", n:"📊 ภาพรวมโครงการ", sub:"แผนติดตั้ง Solar Rooftop ระยะที่ 4 — กฟน.1",
    ic:'<path d="M3 12h4l3 7 4-14 3 7h4"/>'},
-  {k:"report", n:"แจ้งสถานะหน้างาน", sub:"กรอกข้อมูลผู้แจ้ง → เลือกสถานที่ → แนบรูปพร้อมพิกัด",
+  {k:"report", n:"✍️ แจ้งสถานะหน้างาน", sub:"กรอกข้อมูลผู้แจ้ง → เลือกสถานที่ → แนบรูปพร้อมพิกัด",
    ic:'<path d="M12 5v14M5 12h14"/>'},
-  {k:"db", n:"ฐานข้อมูลการแจ้ง", sub:"บันทึกการแจ้งสถานะทั้งหมด พร้อมรูปถ่ายและพิกัด",
+  {k:"db", n:"🗂️ ฐานข้อมูลการแจ้ง", sub:"บันทึกการแจ้งสถานะทั้งหมด พร้อมรูปถ่ายและพิกัด",
    ic:'<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>'},
-  {k:"analytics", n:"วิเคราะห์ความคืบหน้า", sub:"ความคืบหน้าตามขั้นตอน จังหวัด และกำหนดแล้วเสร็จ",
+  {k:"analytics", n:"📈 วิเคราะห์ความคืบหน้า", sub:"ความคืบหน้าตามขั้นตอน จังหวัด และกำหนดแล้วเสร็จ",
    ic:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'},
-  {k:"exec", n:"รายงานสรุป", sub:"รายงานสำหรับผู้บริหาร — พิมพ์เป็น PDF หรือส่งออก Excel",
+  {k:"exec", n:"📄 รายงานสรุป", sub:"รายงานสำหรับผู้บริหาร — พิมพ์เป็น PDF หรือส่งออก Excel",
    ic:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>'}
 ];
 const ALLVIEWS=["overview","report","db","analytics","exec","site"];
@@ -488,21 +512,21 @@ function renderOverview(){
   const overdue=urgent.filter(r=>r.d<0).length;
 
   const tiles=`<div class="tiles">
-    <div class="tile"><div class="k">ติดตั้งหลักแล้วเสร็จ</div>
+    <div class="tile" style="--stripe:var(--c4)"><div class="k">☀️ ติดตั้งแผงแล้วเสร็จ</div>
       <div class="v num">${doneMain}<span style="font-size:15px;color:var(--ink-3)"> / 36</span></div>
       <div class="bar"><i style="width:${doneMain/36*100}%"></i></div>
       <div class="s num">${(doneMain/36*100).toFixed(0)}% ของแผน</div></div>
-    <div class="tile"><div class="k">ปิดงานแล้ว</div>
+    <div class="tile" style="--stripe:var(--c6)"><div class="k">✅ ปิดงานแล้ว</div>
       <div class="v num">${doneClose}<span style="font-size:15px;color:var(--ink-3)"> / 36</span></div>
       <div class="bar"><i style="width:${doneClose/36*100}%;background:var(--c6)"></i></div>
       <div class="s">ปิดงานจัดซื้อ/งานติดตั้งครบถ้วน</div></div>
-    <div class="tile"><div class="k">เลยกำหนดแล้วเสร็จ</div>
+    <div class="tile" style="--stripe:var(--crit)"><div class="k">⏰ เลยกำหนดแล้วเสร็จ</div>
       <div class="v num" style="color:${overdue?'var(--crit)':'var(--ok)'}">${overdue}</div>
       <div class="s">แห่งที่ครบกำหนดแล้วแต่ยังไม่ติดตั้ง</div></div>
-    <div class="tile"><div class="k">แจ้งปัญหาค้างอยู่</div>
+    <div class="tile" style="--stripe:var(--warn)"><div class="k">⚠️ แจ้งปัญหาค้างอยู่</div>
       <div class="v num" style="color:${issues.length?'var(--warn)':'var(--ink)'}">${issues.length}</div>
       <div class="s">แห่งที่มีขั้นตอนติดสถานะปัญหา</div></div>
-    <div class="tile"><div class="k">กำลังผลิตที่ติดตั้งแล้ว</div>
+    <div class="tile" style="--stripe:var(--c3)"><div class="k">⚡ กำลังผลิตที่ติดตั้งแล้ว</div>
       <div class="v num">${kwDone}<span style="font-size:15px;color:var(--ink-3)"> kWp</span></div>
       <div class="s num">จาก 344 kWp · ${nf(pvDone)} แผง</div></div>
   </div>`;
@@ -528,10 +552,10 @@ function renderOverview(){
   $("#v-overview").innerHTML = tiles + `
   <div class="sec"><h2>ความคืบหน้าตามขั้นตอนงาน</h2><span class="note">อัปเดตจากการแจ้งหน้างานแบบเรียลไทม์</span></div>
   <div class="card pad">${stageBars}</div>
-  <div class="sec"><h2>ต้องเร่งดำเนินการ</h2><span class="note">เรียงตามวันครบกำหนดที่ใกล้ที่สุด · แสดง 8 อันดับแรก</span></div>
+  <div class="sec"><h2>🔥 ต้องเร่งดำเนินการ</h2><span class="note">เรียงตามวันครบกำหนดที่ใกล้ที่สุด · แสดง 8 อันดับแรก</span></div>
   <div class="card tablewrap"><table><thead><tr><th>การไฟฟ้า / สถานที่</th><th>ครบกำหนด</th><th>สถานะเวลา</th><th>อุปกรณ์ประกอบ</th><th></th></tr></thead>
   <tbody>${urg||`<tr><td colspan="5" class="empty">ติดตั้งครบทุกแห่งแล้ว</td></tr>`}</tbody></table></div>
-  <div class="sec"><h2>รายการทั้งหมด 36 แห่ง</h2><span class="note">เก็บหลักฐานรูปถ่าย + พิกัด เฉพาะขั้น “ติดตั้งแผง/อินเวอร์เตอร์” ${noProofCount()?`&mdash; <span class="noproof">${noProofCount()} แห่งยังไม่มีหลักฐาน</span> (ป้ายเส้นประ + เครื่องหมาย *)`:"&mdash; ทุกแห่งที่ติดตั้งแผงแล้วเสร็จ มีรูปถ่ายยืนยันครบ"}</span></div>
+  <div class="sec"><h2>📋 รายการทั้งหมด 36 แห่ง</h2><span class="note">เก็บหลักฐานรูปถ่าย + พิกัด เฉพาะขั้น “ติดตั้งแผง/อินเวอร์เตอร์” ${noProofCount()?`&mdash; <span class="noproof">${noProofCount()} แห่งยังไม่มีหลักฐาน</span> (ป้ายเส้นประ + เครื่องหมาย *)`:"&mdash; ทุกแห่งที่ติดตั้งแผงแล้วเสร็จ มีรูปถ่ายยืนยันครบ"}</span></div>
   ${filterBar()}
   <div class="card tablewrap" id="alltbl"></div>`;
 
@@ -868,7 +892,7 @@ function toast(t){
 /* =======================================================================  DATABASE VIEW  */
 function photoSrc(p,big){ const id=typeof p==="string"?p:(p&&p.id)||"";
   return id?`https://drive.google.com/thumbnail?id=${id}&sz=${big?"w1600":"w480"}`:""; }
-const ST_TXT={done:["p-ok","แล้วเสร็จ"],progress:["p-warn","กำลังดำเนินการ"],issue:["p-crit","มีปัญหา"],none:["p-idle","ยังไม่ดำเนินการ"]};
+const ST_TXT={done:["p-ok","✅ แล้วเสร็จ"],progress:["p-warn","🔄 กำลังดำเนินการ"],issue:["p-crit","⚠️ มีปัญหา"],none:["p-idle","⬜ ยังไม่ดำเนินการ"]};
 const stageName=k=>(STAGES.find(x=>x.k===k)||{}).n||k;
 const statusName=k=>(ST_TXT[k]||ST_TXT.none)[1];
 
@@ -1034,7 +1058,7 @@ function renderSite(){
       </div>
       <button class="btn primary" id="repsite" type="button" style="margin-top:16px">+ แจ้งสถานะแห่งนี้</button>
     </div>
-    <div class="sec"><h2>ประวัติการแจ้งสถานะ</h2><span class="note">${rs.length} รายการ · เรียงจากล่าสุด</span></div>
+    <div class="sec"><h2>🕘 ประวัติการแจ้งสถานะ</h2><span class="note">${rs.length} รายการ · เรียงจากล่าสุด</span></div>
     ${rs.length?`<div class="card pad"><ul class="tl">${tl}</ul></div>`:`<div class="card"><div class="empty">ยังไม่มีการแจ้งสถานะของจุดนี้</div></div>`}`;
   $("#backsite").onclick=()=>go("overview");
   $("#repsite").onclick=()=>{state.form.siteSeq=String(s.seq);state.form.step=1;go("report");};
@@ -1280,7 +1304,7 @@ function renderExec(){
 
       <h2>4. สถานะรายแห่ง</h2>
       <div class="tablewrap"><table><thead><tr><th>#</th><th>สถานที่</th><th>จังหวัด</th><th>ครบกำหนด</th>
-        ${STAGES.map(g=>`<th>${g.n.split(" ")[0]}</th>`).join("")}<th>kWp</th></tr></thead>
+        ${STAGES.map(g=>`<th>${g.n}</th>`).join("")}<th>kWp</th></tr></thead>
         <tbody>${rows.map(({s,st})=>`<tr><td class="num">${s.seq}</td><td>${esc(s.name)}</td><td>${esc(s.prov)}</td>
           <td class="num">${fdate(s.due)}</td>
           ${STAGES.map(g=>`<td>${st[g.k]===1?"✔":st[g.k]===0.5?"◐":st[g.k]===-1?"✕":"–"}</td>`).join("")}
@@ -1447,6 +1471,7 @@ function render(){
   if(state.view==="site")renderSite();
   const n=$("#navcount"); if(n)n.textContent=live().length;
 }
+try{ $("#buildtag").textContent = window.__BUILD || "?"; }catch(e){}
 buildNav(); render();
 
 $("#collapse").onclick=()=>{const s=$("#shell");s.classList.toggle("collapsed");
@@ -1454,6 +1479,21 @@ $("#collapse").onclick=()=>{const s=$("#shell");s.classList.toggle("collapsed");
 $("#menubtn").onclick=()=>$("#shell").classList.toggle("navopen");
 $("#scrim").onclick=()=>$("#shell").classList.remove("navopen");
 $("#gotoreport").onclick=()=>go("report");
+
+/* ---------- ปุ่มปรับขนาดตัวหนังสือ ---------- */
+function applyFs(v){
+  v=Math.min(1.6,Math.max(0.85,Math.round(v*100)/100));
+  document.documentElement.style.setProperty("--fs",v);
+  const t=$("#fsval"); if(t)t.textContent=Math.round(v*100)+"%";
+  try{localStorage.setItem("solarFs",v);}catch(e){}
+  return v;
+}
+let FS=1;
+try{ const v=parseFloat(localStorage.getItem("solarFs")); if(v) FS=v; }catch(e){}
+applyFs(FS);
+$("#fsup").onclick=()=>{FS=applyFs(FS+0.1);};
+$("#fsdn").onclick=()=>{FS=applyFs(FS-0.1);};
+
 $("#refreshbtn").onclick=()=>refresh();
 $("#themebtn").onclick=()=>{
   const r=document.documentElement;
