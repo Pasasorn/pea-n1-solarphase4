@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{color-scheme:light dark} body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+<title>รายงานผลการดำเนินงาน Solar สำนักงาน ระยะที่ 4 ปี 2569</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+<script>
+/* ---- ตัวตรวจข้อผิดพลาด: แสดงสาเหตุบนหน้าจอ ไม่ต้องเปิด F12 ---- */
+window.__BOOTLOG=[];
+function __showBoot(){
+  try{
+    var d=document.getElementById("bootlog");
+    if(!d){
+      d=document.createElement("pre"); d.id="bootlog";
+      d.style.cssText="position:fixed;left:0;right:0;bottom:0;z-index:99999;max-height:50vh;overflow:auto;"+
+        "margin:0;padding:10px 12px;background:#B42318;color:#fff;white-space:pre-wrap;"+
+        "font:12px/1.5 ui-monospace,Menlo,Consolas,monospace";
+      (document.body||document.documentElement).appendChild(d);
+    }
+    d.textContent="⚠ ข้อผิดพลาดของสคริปต์ — ถ่ายหน้าจอนี้ส่งให้ผู้ดูแล\n"+window.__BOOTLOG.join("\n");
+  }catch(_){}
+}
+window.addEventListener("error",function(e){
+  window.__BOOTLOG.push((e.message||"error")+"  [บรรทัด "+(e.lineno||"?")+":"+(e.colno||"?")+"]");
+  __showBoot();
+},true);
+window.addEventListener("unhandledrejection",function(e){
+  var r=e.reason; window.__BOOTLOG.push("promise: "+((r&&r.message)||r||""));
+  __showBoot();
+});
+window.__INLINE_OK=true;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+:root{
+  --ground:#F1F3F2; --surface:#FFFFFF; --surface-2:#F7F8F7; --line:#DCE1DF; --line-2:#E9ECEA;
+  --ink:#151D1A; --ink-2:#48534E; --ink-3:#77837D;
+  --brand:#3E2A5C; --brand-2:#54397A; --brand-ink:#EDE7F5;
+  --accent:#C9740A;
+  --ok:#17794B; --warn:#B9761B; --crit:#B42318; --idle:#6E7A86;
+  --ok-bg:#E4F2EA; --warn-bg:#FBF0DF; --crit-bg:#FBE9E7; --idle-bg:#ECEFF1;
+  --c1:#2D5FA8; --c2:#C9740A; --c3:#1E8A6E; --c4:#8A4FBF; --c5:#B4436C; --c6:#0480A8; --c7:#8A6D12;
+  --shadow:0 1px 2px rgba(20,30,25,.06),0 6px 18px rgba(20,30,25,.05);
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ground:#111413; --surface:#191D1C; --surface-2:#1F2423; --line:#2E3534; --line-2:#262C2B;
+  --ink:#E8EDEB; --ink-2:#A9B4B0; --ink-3:#7E8A86;
+  --brand:#2A1D3F; --brand-2:#3A2957; --brand-ink:#D9CEE9;
+  --accent:#E09A3C;
+  --ok:#3FA876; --warn:#D79A3E; --crit:#E06A5E; --idle:#8B959F;
+  --ok-bg:#15291F; --warn-bg:#2B2316; --crit-bg:#2E1B18; --idle-bg:#212726;
+  --c1:#5B8FDB; --c2:#BE8329; --c3:#2BA184; --c4:#9F7BDC; --c5:#D5666F; --c6:#2C9FCC; --c7:#A79338;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --ground:#111413; --surface:#191D1C; --surface-2:#1F2423; --line:#2E3534; --line-2:#262C2B;
+  --ink:#E8EDEB; --ink-2:#A9B4B0; --ink-3:#7E8A86;
+  --brand:#2A1D3F; --brand-2:#3A2957; --brand-ink:#D9CEE9;
+  --accent:#E09A3C;
+  --ok:#3FA876; --warn:#D79A3E; --crit:#E06A5E; --idle:#8B959F;
+  --ok-bg:#15291F; --warn-bg:#2B2316; --crit-bg:#2E1B18; --idle-bg:#212726;
+  --c1:#5B8FDB; --c2:#BE8329; --c3:#2BA184; --c4:#9F7BDC; --c5:#D5666F; --c6:#2C9FCC; --c7:#A79338;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"IBM Plex Sans Thai","Noto Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+h1,h2,h3,.disp{font-family:"Bai Jamjuree","IBM Plex Sans Thai",system-ui,sans-serif;text-wrap:balance;margin:0}
+.num{font-variant-numeric:tabular-nums}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--accent)}
+
+/* ---------- shell ---------- */
+.shell{display:flex;min-height:100%}
+.sidebar{position:fixed;inset:0 auto 0 0;width:236px;z-index:40;
+  background:var(--brand);color:var(--brand-ink);display:flex;flex-direction:column;
+  padding:calc(env(safe-area-inset-top,0px) + 14px) 12px calc(env(safe-area-inset-bottom,0px) + 12px);
+  transition:width .18s ease, transform .22s ease;overflow:hidden}
+.shell.collapsed .sidebar{width:62px}
+.brandrow{display:flex;align-items:center;gap:10px;padding:2px 4px 14px}
+.mark{width:32px;height:32px;flex:0 0 32px;border-radius:8px;background:linear-gradient(140deg,var(--accent),#8E5A12);
+  display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px;font-family:"Bai Jamjuree",sans-serif}
+.brandtxt{min-width:0}
+.brandtxt b{display:block;font-family:"Bai Jamjuree",sans-serif;font-size:14px;letter-spacing:.2px;white-space:nowrap}
+.brandtxt span{display:block;font-size:11px;opacity:.72;white-space:nowrap}
+.shell.collapsed .brandtxt,.shell.collapsed .navlabel,.shell.collapsed .sidefoot{display:none}
+nav{display:flex;flex-direction:column;gap:2px}
+.navbtn{display:flex;align-items:center;gap:11px;width:100%;padding:10px;border:0;border-radius:8px;
+  background:transparent;color:var(--brand-ink);cursor:pointer;text-align:left;font-size:14.5px}
+.navbtn:hover{background:rgba(255,255,255,.08)}
+.navbtn[aria-current="true"]{background:rgba(255,255,255,.14);font-weight:600}
+.navbtn svg{flex:0 0 19px;width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.navbadge{margin-left:auto;background:var(--accent);color:#fff;font-size:11px;padding:0 6px;border-radius:9px;font-weight:600}
+.sidefoot{margin-top:auto;font-size:11.5px;opacity:.65;padding:10px 6px 0;border-top:1px solid rgba(255,255,255,.12)}
+.collapse{margin-top:8px;border:1px solid rgba(255,255,255,.16);background:transparent;color:var(--brand-ink);
+  border-radius:8px;padding:7px;cursor:pointer;font-size:12.5px}
+.scrim{display:none}
+
+main{flex:1;min-width:0;margin-left:236px;transition:margin-left .18s ease}
+.shell.collapsed main{margin-left:62px}
+.wrap{padding:0 20px 56px;max-width:1180px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ground);
+  padding:16px 20px 12px;border-bottom:1px solid var(--line);margin-bottom:18px;
+  display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+header.top h1{font-size:21px;letter-spacing:-.2px}
+header.top p{margin:2px 0 0;color:var(--ink-3);font-size:12.5px}
+.top-actions{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.menubtn{display:none}
+
+/* ---------- atoms ---------- */
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 13px;cursor:pointer;font-size:13.5px}
+.btn:hover{border-color:var(--ink-3)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.pad{padding:16px}
+.grid{display:grid;gap:14px}
+.eyebrow{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:2px 9px;border-radius:999px;font-weight:500;white-space:nowrap}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.p-ok{color:var(--ok);background:var(--ok-bg)} .p-warn{color:var(--warn);background:var(--warn-bg)}
+.p-crit{color:var(--crit);background:var(--crit-bg)} .p-idle{color:var(--idle);background:var(--idle-bg)}
+label.f{display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:5px;font-weight:500}
+label.f span{color:var(--crit)}
+.in{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2)}
+.in:focus{outline:2px solid var(--accent);outline-offset:1px;background:var(--surface)}
+.hint{font-size:11.5px;color:var(--ink-3);margin-top:4px}
+.err{font-size:12px;color:var(--crit);margin-top:4px}
+.tablewrap{overflow-x:auto;border-radius:var(--r)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:720px}
+th{text-align:left;font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);
+  padding:9px 10px;border-bottom:1px solid var(--line);background:var(--surface-2);position:sticky;top:0}
+td{padding:9px 10px;border-bottom:1px solid var(--line-2);vertical-align:middle}
+tbody tr:hover{background:var(--surface-2)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:13px 15px}
+.tile .k{font-size:11.5px;color:var(--ink-3);font-weight:600;letter-spacing:.04em}
+.tile .v{font-family:"Bai Jamjuree",sans-serif;font-size:27px;font-weight:600;line-height:1.15;letter-spacing:-.5px}
+.tile .s{font-size:11.5px;color:var(--ink-3)}
+.bar{height:7px;border-radius:99px;background:var(--line-2);overflow:hidden;margin-top:8px}
+.bar>i{display:block;height:100%;border-radius:99px;background:var(--accent)}
+.sec{margin:26px 0 12px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.sec h2{font-size:16.5px}
+.sec .note{font-size:12px;color:var(--ink-3)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:12.5px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.empty{padding:34px 18px;text-align:center;color:var(--ink-3);font-size:13.5px}
+
+/* stepper */
+.steps{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+.step{flex:1;min-width:120px;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font-size:12.5px}
+.step b{display:block;font-size:11px;color:var(--ink-3);letter-spacing:.06em}
+.step.on{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.step.done{border-color:var(--ok);color:var(--ink-2)}
+
+/* photos */
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}
+.shot{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface-2)}
+.shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.shot button{position:absolute;top:5px;right:5px;border:0;background:rgba(0,0,0,.62);color:#fff;border-radius:6px;
+  width:24px;height:24px;cursor:pointer;line-height:1}
+.drop{border:1.5px dashed var(--line);border-radius:var(--r);padding:20px;text-align:center;background:var(--surface-2)}
+.geo{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px;margin-top:8px}
+.geo code{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:var(--surface-2);padding:2px 7px;border-radius:6px}
+
+/* charts */
+.chartcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px 12px;box-shadow:var(--shadow)}
+.chartcard h3{font-size:14.5px;margin-bottom:2px}
+.chartcard .sub{font-size:12px;color:var(--ink-3);margin-bottom:12px}
+svg.chart{width:100%;height:auto;display:block;overflow:visible}
+svg.chart text{font-family:"IBM Plex Sans Thai",sans-serif;font-variant-numeric:tabular-nums}
+.axis{fill:var(--ink-3);font-size:11px}
+.vlab{fill:var(--ink-2);font-size:11.5px;font-weight:600}
+.gridline{stroke:var(--line-2);stroke-width:1}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+#tip{position:fixed;z-index:80;pointer-events:none;background:var(--ink);color:var(--ground);padding:7px 10px;
+  border-radius:7px;font-size:12px;line-height:1.45;box-shadow:0 6px 18px rgba(0,0,0,.25);max-width:230px}
+.modal{position:fixed;inset:0;z-index:90;background:rgba(10,14,12,.68);display:grid;place-items:center;padding:18px}
+.modal .box{background:var(--surface);border-radius:12px;max-width:820px;width:100%;max-height:88vh;overflow:auto;padding:18px}
+
+@media (max-width:860px){
+  .sidebar{transform:translateX(-100%);width:236px}
+  .shell.navopen .sidebar{transform:none}
+  .shell.navopen .scrim{display:block;position:fixed;inset:0;background:rgba(10,14,12,.5);z-index:30}
+  main,.shell.collapsed main{margin-left:0}
+  .menubtn{display:inline-flex}
+  .collapse{display:none}
+  .wrap{padding:0 16px 48px}
+  header.top{padding:14px 16px 11px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- extras ---------- */
+.authbar{background:var(--crit-bg);border:1px solid var(--crit);border-left-width:4px;border-radius:var(--r);
+  padding:12px 14px;margin-bottom:16px;font-size:13.5px;line-height:1.5}
+.authbar b{color:var(--crit);display:block;font-size:14.5px;margin-bottom:4px}
+.authbar ol{margin:7px 0 0;padding-left:20px} .authbar li{margin:3px 0}
+.noproof{display:inline-block;font-size:10.5px;font-weight:600;color:var(--warn);background:var(--warn-bg);
+  border:1px dashed var(--warn);border-radius:999px;padding:0 7px;white-space:nowrap;vertical-align:1px}
+.pill.unproven{border:1px dashed currentColor}
+.pill.unproven::after{content:"*";font-weight:700;margin-left:1px}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:inherit;font-weight:600;cursor:pointer;text-align:left;
+  border-bottom:1px dotted var(--ink-3)}
+.linkbtn:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.danger{color:var(--crit);border-color:var(--crit)}
+.danger:hover{background:var(--crit-bg)}
+tr.gone td{opacity:.62}
+tr.gone td b{text-decoration:line-through}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{position:relative;padding:0 0 20px 26px;border-left:2px solid var(--line)}
+.tl li:last-child{border-left-color:transparent;padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;
+  background:var(--surface);border:2px solid var(--ink-3)}
+.tl li.ok::before{border-color:var(--ok)} .tl li.warn::before{border-color:var(--warn)}
+.tl li.crit::before{border-color:var(--crit)} .tl li.gone::before{border-color:var(--line);background:var(--line-2)}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px 18px;font-size:13.5px}
+.kv .k{font-size:11.5px;color:var(--ink-3)}
+.rep{background:var(--surface);color:var(--ink)}
+.rep h2{font-size:15px;margin:22px 0 8px}
+.rep table{min-width:0;font-size:12px}
+.rep th,.rep td{padding:5px 7px}
+/* ---------- แผ่นกำหนดการ A4 แนวนอน ---------- */
+.sheet{background:#fff;color:#14181B;border:1px solid var(--line);border-radius:var(--r);
+  padding:14px 16px;box-shadow:var(--shadow);overflow-x:auto}
+.sheet .inner{min-width:900px}
+.sheet h2{font-size:17px;margin:0;color:#14181B}
+.sheet .sub{font-size:11.5px;color:#5A6570;margin-top:1px}
+.sheet .shead{display:flex;align-items:flex-end;gap:12px;border-bottom:2px solid #3E2A5C;padding-bottom:5px;margin-bottom:6px;flex-wrap:wrap}
+.sheet .kpis{margin-left:auto;display:flex;gap:6px}
+.sheet .kpi{border:1px solid #CBD3D8;border-radius:4px;padding:2px 8px;text-align:center;min-width:64px}
+.sheet .kpi .k{font-size:9px;color:#5A6570;white-space:nowrap}
+.sheet .kpi .v{font-size:16px;font-weight:700;line-height:1.15}
+.sheet .kpi.g .v{color:#17794B} .sheet .kpi.c .v{color:#B42318} .sheet .kpi.w .v{color:#B9761B}
+.sheet table{border-collapse:collapse;width:100%;min-width:0;font-size:12px}
+.sheet th{background:#3E2A5C;color:#fff;font-size:10px;font-weight:700;padding:4px 5px;text-align:left;
+  border-right:1px solid #5A4478;position:static;text-transform:none;letter-spacing:0}
+.sheet th:last-child{border-right:0}
+.sheet td{padding:1px 5px;border-bottom:1px solid #E6EAEC;font-size:12px;line-height:1.2;color:#14181B}
+.sheet tr.band td{border-top:1px solid #B6BEC5}
+.sheet tbody tr:hover{background:#F6F7F8}
+.sheet .n{text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.sheet .b{font-weight:700} .sheet .nm{font-weight:600}
+.sheet .ac{text-align:center;font-weight:700;color:#17794B}
+.sheet .stx{white-space:nowrap;font-size:11px;font-weight:600;text-align:center}
+.sheet .stx.ok{color:#17794B} .sheet .stx.crit{color:#B42318}
+.sheet .stx.warn{color:#B9761B} .sheet .stx.plan{color:#41566B}
+.sheet .axcell{position:relative;height:14px;background:#F4F5F7}
+.sheet .axcell span{position:absolute;transform:translateX(-50%);top:1px;font-size:9.5px;color:#5A6570;white-space:nowrap}
+.sheet .axcell i{position:absolute;top:11px;height:3px;width:0;border-left:1px solid #B6BEC5}
+.sheet .gcell{padding:2px 0;width:36%}
+.sheet .track{position:relative;height:9px;background:#EFF1F3;border-radius:3px}
+.sheet .gbar{position:absolute;top:0;height:9px;border-radius:3px}
+.sheet .gbar.ok{background:#17794B} .sheet .gbar.crit{background:#B42318}
+.sheet .gbar.warn{background:#B9761B} .sheet .gbar.plan{background:#2D5FA8}
+.sheet .gd{position:absolute;top:-1px;width:5px;height:11px;margin-left:-2.5px;border-radius:1px}
+.sheet .gd.r{background:#14181B}
+.sheet .gd.d{background:#fff;border:2px solid #14181B}
+.sheet .gd.d.crit{border-color:#B42318} .sheet .gd.d.ok{border-color:#17794B}
+.sheet .gnow{position:absolute;top:-3px;bottom:-3px;width:0;border-left:1px dashed #B42318}
+.sheet .slegend{display:flex;gap:12px;font-size:10px;color:#3D474F;margin-top:5px;flex-wrap:wrap}
+.sheet .slegend i{display:inline-block;width:13px;height:7px;border-radius:2px;margin-right:3px}
+.sheet .sfoot{margin-top:5px;font-size:10px;color:#6B757D;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.sheet .signrow{display:flex;gap:30px;margin-top:20px;font-size:12px}
+.sheet .signrow div{flex:1;text-align:center}
+.sheet .signrow .ln{border-top:1px dotted #14181B;margin:32px 12px 4px}
+.sheet .lst{font-size:11px;color:#3D474F;line-height:1.25}
+
+@media print{
+  @page{size:A4 landscape;margin:9mm 10mm}
+  .sidebar,.scrim,header.top,.chips,.no-print{display:none!important}
+  main,.shell.collapsed main{margin-left:0}
+  .wrap{padding:0;max-width:none}
+  body{background:#fff;color:#111;font-size:11.5px}
+  .card,.chartcard,.tile{box-shadow:none;border-color:#bbb;break-inside:avoid}
+  .rep h2{break-after:avoid}
+  table{page-break-inside:auto} tr{break-inside:avoid}
+  .sheet{border:0;box-shadow:none;padding:0;overflow:visible}
+  .sheet .inner{min-width:0}
+  .sheet td,.sheet table{font-size:9.6pt} .sheet th{font-size:8pt}
+  .sheet td{padding:0.3px 4px;line-height:1.14}
+  .sheet .stx{font-size:8.8pt} .sheet .kpi .v{font-size:12pt} .sheet .kpi .k{font-size:7pt}
+  .sheet h2{font-size:13.5pt} .sheet .sub{font-size:8.6pt}
+  .sheet .slegend{font-size:8pt} .sheet .sfoot{font-size:7.6pt}
+  .pagebreak{break-before:page}
+}
+</style>
+
+</head>
+<body>
+<div class="shell" id="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brandrow">
+      <div class="mark">PEA</div>
+      <div class="brandtxt"><b>รายงานผล Solar</b><span>สำนักงาน ระยะที่ 4 · 36 แห่ง</span></div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="sidefoot">
+      <div>สัญญา บ.45/2569</div>
+      <div id="dbstate">กำลังเชื่อมฐานข้อมูล…</div>
+    </div>
+    <button class="collapse" id="collapse" type="button">ย่อแถบเมนู</button>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <main>
+    <header class="top">
+      <button class="btn menubtn" id="menubtn" type="button">☰ เมนู</button>
+      <div>
+        <h1 id="vtitle">ภาพรวมโครงการ</h1>
+        <p id="vsub">แผนติดตั้ง Solar Rooftop ระยะที่ 4 — กฟน.1</p>
+      </div>
+      <div class="top-actions">
+        <button class="btn" id="refreshbtn" type="button">รีเฟรช</button>
+        <button class="btn" id="themebtn" type="button">ธีม</button>
+        <button class="btn primary" id="gotoreport" type="button">+ แจ้งสถานะ</button>
+      </div>
+    </header>
+    <div class="wrap">
+      <div id="authbar" class="authbar no-print" hidden></div>
+      <section id="v-overview"></section>
+      <section id="v-report" hidden></section>
+      <section id="v-db" hidden></section>
+      <section id="v-analytics" hidden></section>
+      <section id="v-exec" hidden></section>
+      <section id="v-site" hidden></section>
+    </div>
+  </main>
+</div>
+
+<script>
+/* =======================================================================
+   ข้อมูลแผน 36 แห่ง — กฟน.1 (จากแผนจัดส่ง ระยะที่ 4 + ตาราง WBS/งบประมาณ)
+   recv = วันรับของ, due = วันที่ต้องติดตั้งแล้วเสร็จ (รับของ + 1 เดือน)
+   base = สถานะตั้งต้น ณ 18 ก.ย. 2026 : 1 = แล้วเสร็จ, 0 = ยังไม่ดำเนินการ, 0.5 = กำลังดำเนินการ
+   ======================================================================= */
+const STAGES = [
+  {k:"survey",  n:"สำรวจประมาณการ", c:"var(--c1)"},
+  {k:"procure", n:"จัดซื้อ",         c:"var(--c2)"},
+  {k:"accy",    n:"ติดตั้งอุปกรณ์ประกอบ", c:"var(--c3)"},
+  {k:"main",    n:"ติดตั้งแผง/อินเวอร์เตอร์", c:"var(--c4)"},
+  {k:"permit",  n:"ขออนุญาตขนานเครื่อง", c:"var(--c5)"},
+  {k:"close",   n:"ปิดงาน", c:"var(--c6)"},
+  {k:"asset",   n:"ขึ้นทรัพย์สิน", c:"var(--c7)"}
+];
+const S = (seq,name,prov,trip,recv,due,kwp,pv,owner,wbs,budget,accy,main)=>
+  ({seq,name,prov,trip,recv,due,kwp,pv,owner,wbs,budget,
+    base:{survey:1,procure:1,accy:accy,main:main,permit:0,close:0,asset:0}});
+const SITES = [
+ S(1,"อาคาร 2 กฟน.1","เชียงใหม่",1,"2026-08-25","2026-09-25",10,16,"กบล.(น1)","I-68-A-CTSXX.IX.1001",178975.16,1,0),
+ S(2,"สถานีไฟฟ้าเชียงใหม่ 1","เชียงใหม่",1,"2026-08-25","2026-09-25",10,16,"กปบ.(น1) / กฟส.เมืองเชียงใหม่","I-68-A-CHMXX.IX.1017",174577.03,1,0),
+ S(3,"สถานีไฟฟ้าเชียงใหม่ 4","เชียงใหม่",1,"2026-08-25","2026-09-25",10,16,"กปบ.(น1) / กฟส.เมืองเชียงใหม่ 2","I-68-A-CH2XX.IX.1018",174577.03,1,0),
+ S(4,"สถานีไฟฟ้าดอยสะเก็ด","เชียงใหม่",2,"2026-08-25","2026-09-25",10,16,"กปบ.(น1) / กฟส.ดอยสะเก็ด","I-68-A-DSTXX.IX.1019",174577.03,1,0),
+ S(5,"กฟย.ดอยหล่อ","เชียงใหม่",3,"2026-08-25","2026-09-25",8,13,"กฟส.จอมทอง / ดอยหล่อ","I-68-A-CHTDL.IX.1030",124705.17,0,0),
+ S(6,"สถานีไฟฟ้าเชียงราย 1","เชียงราย",4,"2026-08-25","2026-09-25",10,16,"กปบ.(น1) / กฟส.เมืองเชียงราย","I-68-A-CHRXX.IX.1020",174577.03,0,0),
+ S(7,"กฟย.สะเมิง","เชียงใหม่",2,"2026-08-26","2026-09-26",8,13,"กฟส.แม่ริม / สะเมิง","I-68-A-MARSM.IX.1032",124705.17,0,0),
+ S(8,"กฟย.แม่แจ่ม","เชียงใหม่",3,"2026-08-26","2026-09-26",8,13,"กฟส.จอมทอง / แม่แจ่ม","I-68-A-CHTMC.IX.1029",124705.17,0,0),
+ S(9,"สถานีไฟฟ้าแม่จัน","เชียงราย",4,"2026-08-26","2026-09-26",12,20,"กปบ.(น1) / กฟส.แม่จัน","I-68-A-MACXX.IX.1006",220870.35,1,0),
+ S(10,"สถานีไฟฟ้าเชียงของ","เชียงราย",4,"2026-08-26","2026-09-26",12,20,"กปบ.(น1) / กฟส.เชียงของ","I-68-A-CHGXX.IX.1007",220870.35,0,0),
+ S(11,"กฟย.วังเหนือ","ลำปาง",5,"2026-08-26","2026-09-26",10,16,"กฟส.แจ้ห่ม / วังเหนือ","I-68-A-CHHWN.IX.1014",178975.16,0,0),
+ S(12,"สถานีไฟฟ้าเวียงป่าเป้า","เชียงราย",5,"2026-08-26","2026-09-26",12,20,"กปบ.(น1) / กฟส.เวียงป่าเป้า","I-68-A-WPPXX.IX.1005",220870.35,0,0),
+ S(13,"สถานีไฟฟ้านิคม 1","ลำพูน",8,"2026-08-26","2026-09-26",12,20,"กปบ.(น1) / กฟส.เมืองลำพูน","I-68-A-LPNXX.IX.1011",220870.35,1,0),
+ S(14,"สถานีไฟฟ้านิคม 2","ลำพูน",8,"2026-08-26","2026-09-26",10,16,"กปบ.(น1) / กฟส.เมืองลำพูน","I-68-A-LPNXX.IX.1026",174577.03,1,0),
+ S(15,"สถานีไฟฟ้านิคม 3","ลำพูน",8,"2026-08-26","2026-09-26",10,16,"กปบ.(น1) / กฟส.เมืองลำพูน","I-68-A-LPNXX.IX.1027",174577.03,1,0),
+ S(16,"สถานีไฟฟ้าลำพูน 1","ลำพูน",9,"2026-08-26","2026-09-26",10,16,"กปบ.(น1) / กฟส.เมืองลำพูน","I-68-A-LPNXX.IX.1025",178975.16,1,0),
+ S(17,"สถานีไฟฟ้าฝาง","เชียงใหม่",2,"2026-08-27","2026-09-27",12,20,"กปบ.(น1) / กฟส.ฝาง","I-68-A-FAGXX.IX.1004",220870.35,0,0),
+ S(18,"กฟย.แม่ลาน้อย","แม่ฮ่องสอน",3,"2026-08-27","2026-09-27",10,16,"กฟส.แม่สะเรียง / แม่ลาน้อย","I-68-A-MSRML.IX.1013",178975.16,1,0),
+ S(19,"กฟย.ป่าแดด","เชียงราย",5,"2026-08-27","2026-09-27",8,13,"กฟส.พาน / ป่าแดด","I-68-A-PANPD.IX.1031",124705.17,0,0),
+ S(20,"สถานีไฟฟ้าลำปาง 2","ลำปาง",6,"2026-08-27","2026-09-27",10,16,"กปบ.(น1) / กฟส.เมืองลำปาง","I-68-A-LPGXX.IX.1022",174577.03,1,0),
+ S(21,"สถานีไฟฟ้าลำปาง 3","ลำปาง",6,"2026-08-27","2026-09-27",10,16,"กปบ.(น1) / กฟส.เมืองลำปาง","I-68-A-LPGXX.IX.1023",174577.03,1,0),
+ S(22,"สถานีไฟฟ้าลี้","ลำพูน",7,"2026-08-27","2026-09-27",10,16,"กปบ.(น1) / กฟส.ลี้","I-68-A-LIIXX.IX.1024",174577.03,1,0),
+ S(23,"กฟย.แม่ทา","ลำพูน",9,"2026-08-27","2026-09-27",5,8,"กฟส.เมืองลำพูน / แม่ทา","I-68-A-LPNMT.IX.1034",87288.52,0,0),
+ S(24,"สถานีไฟฟ้าแจ้ห่ม","ลำปาง",6,"2026-08-28","2026-09-28",10,16,"กปบ.(น1) / กฟส.แจ้ห่ม","I-68-A-CHHXX.IX.1021",178975.16,0,0),
+ S(25,"กฟย.สบปราบ","ลำปาง",7,"2026-08-28","2026-09-28",5,8,"กฟส.เกาะคา / สบปราบ","I-68-A-KOKSP.IX.1003",87288.52,0,0),
+ S(26,"กฟย.พิชัย-บ้านสมเด็จ","ลำปาง",7,"2026-08-28","2026-09-28",5,8,"กฟส.เมืองลำปาง / พิชัย-บ้านเสด็จ","I-68-A-LPGBPB.IX.1002",87288.52,0,0),
+ S(27,"สถานีไฟฟ้าฮอด","เชียงใหม่",9,"2026-08-28","2026-09-28",10,16,"กปบ.(น1) / กฟส.ฮอด","I-68-A-HOTXX.IX.1036",174577.03,0,0),
+ S(28,"สถานีไฟฟ้าลำพูน 3","ลำพูน",10,"2026-09-01","2026-10-01",12,20,"กปบ.(น1) / กฟส.เมืองลำพูน","I-68-A-LPNXX.IX.1010",220870.35,1,0),
+ S(29,"สถานีไฟฟ้าป่าซาง","ลำพูน",10,"2026-09-01","2026-10-01",10,16,"กปบ.(น1) / กฟส.ป่าซาง","I-68-A-PASXX.IX.1028",178975.16,0,0),
+ S(30,"กฟย.เวียงหนองล่อง","ลำพูน",10,"2026-09-01","2026-10-01",10,16,"กฟส.บ้านโฮ่ง / เวียงหนองล่อง","I-68-A-BAHWN.IX.1016",178975.16,0,0),
+ S(31,"กฟย.นครเจดีย์","ลำพูน",11,"2026-09-01","2026-10-01",5,8,"กฟส.ป่าซาง / นครเจดีย์","I-68-A-PASNJ.IX.1035",87288.52,0,0),
+ S(32,"สถานีไฟฟ้าพะเยา 1","พะเยา",12,"2026-09-01","2026-10-01",12,20,"กปบ.(น1) / กฟส.พะเยา","I-68-A-PHYXX.IX.1009",220870.35,0,0),
+ S(33,"กฟย.ทุ่งหัวช้าง","ลำพูน",11,"2026-09-02","2026-10-02",8,13,"กฟส.ลี้ / ทุ่งหัวช้าง","I-68-A-LIITH.IX.1033",124705.17,0,0),
+ S(34,"สถานีไฟฟ้าจุน","พะเยา",12,"2026-09-02","2026-10-02",12,20,"กปบ.(น1) / กฟส.จุน","I-68-A-CHUXX.IX.1008",220870.35,0,0),
+ S(35,"กฟย.แม่ตืน","ลำพูน",11,"2026-09-03","2026-10-03",8,13,"กฟส.ลี้ / แม่ตืน","I-68-A-LIIMT.IX.1015",124705.17,0,0),
+ S(36,"กฟย.เชียงม่วน","พะเยา",12,"2026-09-03","2026-10-03",10,16,"กฟส.จุน / เชียงม่วน","I-68-A-CHUCM.IX.1012",178975.16,0,0)
+];
+const UNITS = [...new Set(SITES.map(s=>s.owner))].sort();
+
+/* ---------- helpers ---------- */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const THM=["ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fdate=iso=>{const d=new Date(iso+"T00:00:00");return d.getDate()+" "+THM[d.getMonth()]+" "+d.getFullYear();};
+const fdt=ms=>{const d=new Date(ms);return d.getDate()+" "+THM[d.getMonth()]+" "+d.getFullYear()+" "+
+  String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");};
+const today=()=>{const d=new Date();d.setHours(0,0,0,0);return d;};
+const daysTo=iso=>Math.round((new Date(iso+"T00:00:00")-today())/86400000);
+const nf=n=>n.toLocaleString("th-TH",{maximumFractionDigits:0});
+
+/* ---------- runtime state ---------- */
+const state={view:"overview",reports:[],audit:[],online:null,pin:"",siteSel:null,execTab:"summary",
+  form:{step:1,emp:{id:"",name:"",dept:""},siteSeq:"",stage:"main",status:"done",note:"",photos:[],geo:null},
+  filt:{stage:"all",prov:"all",q:""}, dbFilt:{q:"",tab:"live"}};
+
+const live=()=>state.reports.filter(r=>!r.deleted);
+
+/* status of a site = baseline overridden by latest report per stage (ไม่นับรายการที่ถูกลบ) */
+function siteStatus(site){
+  const st={...site.base};
+  live().filter(r=>r.siteSeq===site.seq).sort((a,b)=>a.ts-b.ts)
+    .forEach(r=>{ st[r.stage] = r.status==="done"?1 : r.status==="progress"?0.5 : r.status==="issue"?-1 : 0; });
+  return st;
+}
+const lvlPill=v=> v===1?['p-ok','แล้วเสร็จ'] : v===0.5?['p-warn','กำลังดำเนินการ'] : v===-1?['p-crit','มีปัญหา'] : ['p-idle','ยังไม่ดำเนินการ'];
+
+/* ขั้นตอนใดของแห่งนี้ "มีหลักฐาน" (มีคนแจ้งพร้อมรูปในระบบ) แล้วบ้าง */
+function evidenceOf(site){
+  const e={};
+  live().filter(r=>r.siteSeq===site.seq).forEach(r=>{ if((r.photos||[]).length) e[r.stage]=true; });
+  return e;
+}
+/* ขั้นตอนที่บังคับต้องมีหลักฐาน (รูปถ่าย + พิกัด) = ติดตั้งแผง/อินเวอร์เตอร์ เท่านั้น */
+const PROOF_STAGES=["main"];
+const needProof=k=>PROOF_STAGES.includes(k);
+/* จำนวนแห่งที่ระบุว่าติดตั้งแผงแล้วเสร็จ แต่ยังไม่มีรูปถ่ายยืนยันในระบบ */
+function noProofCount(){
+  let n=0;
+  SITES.forEach(s=>{const st=siteStatus(s),e=evidenceOf(s);
+    PROOF_STAGES.forEach(k=>{ if(st[k]===1 && !e[k]) n++; });});
+  return n;
+}
+const PROOF_TIP="ระบุว่าติดตั้งแผงแล้วเสร็จ แต่ยังไม่มีรูปถ่ายและพิกัดยืนยันในระบบ";
+function proofMark(stage,done,hasProof){
+  return (needProof(stage)&&done===1&&!hasProof) ? ` <span class="noproof" title="${PROOF_TIP}">ไม่มีหลักฐาน</span>` : "";
+}
+
+/* =======================================================================  NAV  */
+const VIEWS=[
+  {k:"overview", n:"ภาพรวมโครงการ", sub:"แผนติดตั้ง Solar Rooftop ระยะที่ 4 — กฟน.1",
+   ic:'<path d="M3 12h4l3 7 4-14 3 7h4"/>'},
+  {k:"report", n:"แจ้งสถานะหน้างาน", sub:"กรอกข้อมูลผู้แจ้ง → เลือกสถานที่ → แนบรูปพร้อมพิกัด",
+   ic:'<path d="M12 5v14M5 12h14"/>'},
+  {k:"db", n:"ฐานข้อมูลการแจ้ง", sub:"บันทึกการแจ้งสถานะทั้งหมด พร้อมรูปถ่ายและพิกัด",
+   ic:'<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>'},
+  {k:"analytics", n:"วิเคราะห์ความคืบหน้า", sub:"ความคืบหน้าตามขั้นตอน จังหวัด และกำหนดแล้วเสร็จ",
+   ic:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'},
+  {k:"exec", n:"รายงานสรุป", sub:"รายงานสำหรับผู้บริหาร — พิมพ์เป็น PDF หรือส่งออก Excel",
+   ic:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>'}
+];
+const ALLVIEWS=["overview","report","db","analytics","exec","site"];
+function buildNav(){
+  $("#nav").innerHTML=VIEWS.map(v=>`<button class="navbtn" type="button" data-v="${v.k}" aria-current="${v.k===state.view}">
+    <svg viewBox="0 0 24 24">${v.ic}</svg><span class="navlabel">${v.n}</span>
+    ${v.k==="db"?`<span class="navbadge navlabel num" id="navcount">0</span>`:""}</button>`).join("");
+  $$("#nav .navbtn").forEach(b=>b.onclick=()=>go(b.dataset.v));
+}
+function go(k,arg){
+  state.view=k;
+  if(k==="site") state.siteSel=arg;
+  ALLVIEWS.forEach(n=>{$("#v-"+n).hidden=(n!==k);});
+  const v=VIEWS.find(x=>x.k===k)||{n:"รายละเอียดสถานที่",sub:"ประวัติการแจ้งสถานะและรูปถ่ายทั้งหมดของจุดติดตั้งนี้"};
+  $("#vtitle").textContent=v.n; $("#vsub").textContent=v.sub;
+  $$("#nav .navbtn").forEach(b=>b.setAttribute("aria-current",String(b.dataset.v===k)));
+  $("#shell").classList.remove("navopen");
+  window.scrollTo({top:0,behavior:"instant"});
+  render();
+}
+
+/* =======================================================================  OVERVIEW  */
+function renderOverview(){
+  const rows=SITES.map(s=>({s,st:siteStatus(s)}));
+  const doneMain=rows.filter(r=>r.st.main===1).length;
+  const doneClose=rows.filter(r=>r.st.close===1).length;
+  const issues=rows.filter(r=>Object.values(r.st).some(v=>v===-1));
+  const pvDone=rows.filter(r=>r.st.main===1).reduce((a,r)=>a+r.s.pv,0);
+  const kwDone=rows.filter(r=>r.st.main===1).reduce((a,r)=>a+r.s.kwp,0);
+  const urgent=rows.filter(r=>r.st.main!==1).map(r=>({...r,d:daysTo(r.s.due)})).sort((a,b)=>a.d-b.d);
+  const overdue=urgent.filter(r=>r.d<0).length;
+
+  const tiles=`<div class="tiles">
+    <div class="tile"><div class="k">ติดตั้งหลักแล้วเสร็จ</div>
+      <div class="v num">${doneMain}<span style="font-size:15px;color:var(--ink-3)"> / 36</span></div>
+      <div class="bar"><i style="width:${doneMain/36*100}%"></i></div>
+      <div class="s num">${(doneMain/36*100).toFixed(0)}% ของแผน</div></div>
+    <div class="tile"><div class="k">ปิดงานแล้ว</div>
+      <div class="v num">${doneClose}<span style="font-size:15px;color:var(--ink-3)"> / 36</span></div>
+      <div class="bar"><i style="width:${doneClose/36*100}%;background:var(--c6)"></i></div>
+      <div class="s">ปิดงานจัดซื้อ/งานติดตั้งครบถ้วน</div></div>
+    <div class="tile"><div class="k">เลยกำหนดแล้วเสร็จ</div>
+      <div class="v num" style="color:${overdue?'var(--crit)':'var(--ok)'}">${overdue}</div>
+      <div class="s">แห่งที่ครบกำหนดแล้วแต่ยังไม่ติดตั้ง</div></div>
+    <div class="tile"><div class="k">แจ้งปัญหาค้างอยู่</div>
+      <div class="v num" style="color:${issues.length?'var(--warn)':'var(--ink)'}">${issues.length}</div>
+      <div class="s">แห่งที่มีขั้นตอนติดสถานะปัญหา</div></div>
+    <div class="tile"><div class="k">กำลังผลิตที่ติดตั้งแล้ว</div>
+      <div class="v num">${kwDone}<span style="font-size:15px;color:var(--ink-3)"> kWp</span></div>
+      <div class="s num">จาก 344 kWp · ${nf(pvDone)} แผง</div></div>
+  </div>`;
+
+  const stageBars=STAGES.map(g=>{
+    const d=rows.filter(r=>r.st[g.k]===1).length, p=rows.filter(r=>r.st[g.k]===0.5).length, x=rows.filter(r=>r.st[g.k]===-1).length;
+    return `<div style="display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line-2)">
+      <div style="font-size:13.5px">${g.n}</div>
+      <div class="num" style="font-size:13px;color:var(--ink-3)">${d}/36 แล้วเสร็จ${p?` · ${p} กำลังทำ`:""}${x?` · ${x} ปัญหา`:""}</div>
+      <div class="bar" style="grid-column:1/-1;height:9px">
+        <i style="width:${d/36*100}%;background:${g.c}"></i></div></div>`;
+  }).join("");
+
+  const urg=urgent.slice(0,8).map(r=>{
+    const cls=r.d<0?"p-crit":r.d<=7?"p-warn":"p-idle";
+    const txt=r.d<0?`เลยกำหนด ${-r.d} วัน`:r.d===0?"ครบกำหนดวันนี้":`เหลือ ${r.d} วัน`;
+    return `<tr><td><button class="linkbtn" data-site="${r.s.seq}">${esc(r.s.name)}</button><div style="font-size:12px;color:var(--ink-3)">${esc(r.s.prov)} · เที่ยวที่ ${r.s.trip}</div></td>
+      <td class="num">${fdate(r.s.due)}</td><td><span class="pill ${cls}">${txt}</span></td>
+      <td>${(()=>{const[c,t]=lvlPill(r.st.accy);return `<span class="pill ${c}">${t}</span>`;})()}</td>
+      <td><button class="btn" data-quick="${r.s.seq}">แจ้งสถานะ</button></td></tr>`;
+  }).join("");
+
+  $("#v-overview").innerHTML = tiles + `
+  <div class="sec"><h2>ความคืบหน้าตามขั้นตอนงาน</h2><span class="note">อัปเดตจากการแจ้งหน้างานแบบเรียลไทม์</span></div>
+  <div class="card pad">${stageBars}</div>
+  <div class="sec"><h2>ต้องเร่งดำเนินการ</h2><span class="note">เรียงตามวันครบกำหนดที่ใกล้ที่สุด · แสดง 8 อันดับแรก</span></div>
+  <div class="card tablewrap"><table><thead><tr><th>การไฟฟ้า / สถานที่</th><th>ครบกำหนด</th><th>สถานะเวลา</th><th>อุปกรณ์ประกอบ</th><th></th></tr></thead>
+  <tbody>${urg||`<tr><td colspan="5" class="empty">ติดตั้งครบทุกแห่งแล้ว</td></tr>`}</tbody></table></div>
+  <div class="sec"><h2>รายการทั้งหมด 36 แห่ง</h2><span class="note">เก็บหลักฐานรูปถ่าย + พิกัด เฉพาะขั้น “ติดตั้งแผง/อินเวอร์เตอร์” ${noProofCount()?`&mdash; <span class="noproof">${noProofCount()} แห่งยังไม่มีหลักฐาน</span> (ป้ายเส้นประ + เครื่องหมาย *)`:"&mdash; ทุกแห่งที่ติดตั้งแผงแล้วเสร็จ มีรูปถ่ายยืนยันครบ"}</span></div>
+  ${filterBar()}
+  <div class="card tablewrap" id="alltbl"></div>`;
+
+  $$("#v-overview [data-quick]").forEach(b=>b.onclick=()=>{state.form.siteSeq=b.dataset.quick;state.form.step=1;go("report");});
+  wireFilter(); renderAllTable(); wireSiteLinks("#v-overview");
+}
+function filterBar(){
+  const provs=[...new Set(SITES.map(s=>s.prov))];
+  return `<div class="chips" id="fbar">
+    <button class="chip" data-f="prov" data-v="all" aria-pressed="${state.filt.prov==="all"}">ทุกจังหวัด</button>
+    ${provs.map(p=>`<button class="chip" data-f="prov" data-v="${p}" aria-pressed="${state.filt.prov===p}">${p}</button>`).join("")}
+    <input class="in" id="fq" placeholder="ค้นหาชื่อสถานที่ / WBS" value="${esc(state.filt.q)}" style="max-width:250px;margin-left:auto">
+  </div>`;
+}
+function wireFilter(){
+  $$("#fbar .chip").forEach(c=>c.onclick=()=>{state.filt.prov=c.dataset.v;renderOverview();});
+  const q=$("#fq"); if(q){q.oninput=()=>{state.filt.q=q.value;renderAllTable();};}
+}
+function renderAllTable(){
+  const q=state.filt.q.trim().toLowerCase();
+  const rows=SITES.filter(s=>(state.filt.prov==="all"||s.prov===state.filt.prov)&&
+      (!q||s.name.toLowerCase().includes(q)||s.wbs.toLowerCase().includes(q)))
+    .map(s=>{const st=siteStatus(s);const d=daysTo(s.due);
+      const timeCls=st.main===1?"p-ok":d<0?"p-crit":d<=7?"p-warn":"p-idle";
+      const timeTxt=st.main===1?"เสร็จแล้ว":d<0?`เลย ${-d} วัน`:`เหลือ ${d} วัน`;
+      const ev=evidenceOf(s);
+      return `<tr><td class="num">${s.seq}</td>
+        <td><button class="linkbtn" data-site="${s.seq}">${esc(s.name)}</button><div style="font-size:12px;color:var(--ink-3)">${esc(s.owner)}</div></td>
+        <td>${esc(s.prov)}</td><td class="num">${fdate(s.recv)}</td><td class="num">${fdate(s.due)}</td>
+        <td><span class="pill ${timeCls}">${timeTxt}</span></td>
+        ${STAGES.map(g=>{const[c,t]=lvlPill(st[g.k]);
+          const up=needProof(g.k)&&st[g.k]===1&&!ev[g.k];
+          return `<td><span class="pill ${c}${up?" unproven":""}" title="${up?PROOF_TIP:g.n}">${t}</span></td>`;}).join("")}
+        <td class="num">${s.kwp}</td><td style="font-size:12px;font-family:ui-monospace,monospace">${esc(s.wbs)}</td></tr>`;}).join("");
+  $("#alltbl").innerHTML=`<table><thead><tr><th>#</th><th>การไฟฟ้า / ผู้รับผิดชอบ</th><th>จังหวัด</th><th>รับของ</th><th>ครบกำหนด</th><th>เวลา</th>
+    ${STAGES.map(g=>`<th>${g.n}</th>`).join("")}<th>kWp</th><th>WBS</th></tr></thead>
+    <tbody>${rows||`<tr><td colspan="12" class="empty">ไม่พบรายการที่ค้นหา</td></tr>`}</tbody></table>`;
+  wireSiteLinks("#alltbl");
+}
+function wireSiteLinks(root){
+  $$(root+" [data-site]").forEach(b=>b.onclick=()=>go("site",+b.dataset.site));
+}
+
+/* =======================================================================  REPORT FORM  */
+function renderReport(){
+  const f=state.form;
+  const steps=["ผู้แจ้ง","งานที่แจ้ง","รูปถ่าย + พิกัด","ตรวจทานและส่ง"];
+  const head=`<div class="steps">${steps.map((s,i)=>
+    `<div class="step ${f.step===i+1?"on":""} ${f.step>i+1?"done":""}"><b>ขั้นที่ ${i+1}</b>${s}</div>`).join("")}</div>`;
+  let body="";
+
+  if(f.step===1){
+    body=`<div class="card pad">
+      <div class="eyebrow">ข้อมูลผู้แจ้งสถานะ</div>
+      <p style="color:var(--ink-2);font-size:13px;margin:6px 0 16px">ต้องกรอกทุกครั้งก่อนแจ้งสถานะ เพื่อให้ตรวจสอบย้อนกลับได้ว่าใครเป็นผู้รายงาน</p>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+        <div><label class="f" for="empId">รหัสพนักงาน <span>*</span></label>
+          <input class="in num" id="empId" inputmode="numeric" placeholder="เช่น 512345" value="${esc(f.emp.id)}">
+          <div class="hint">ตัวเลข 4–10 หลัก</div><div class="err" id="e-empId" hidden></div></div>
+        <div><label class="f" for="empName">ชื่อ - นามสกุล <span>*</span></label>
+          <input class="in" id="empName" placeholder="เช่น สมชาย ใจดี" value="${esc(f.emp.name)}">
+          <div class="err" id="e-empName" hidden></div></div>
+        <div><label class="f" for="empDept">สังกัด <span>*</span></label>
+          <input class="in" id="empDept" list="units" placeholder="เช่น กฟส.เมืองลำพูน" value="${esc(f.emp.dept)}">
+          <datalist id="units">${UNITS.map(u=>`<option value="${esc(u)}"></option>`).join("")}</datalist>
+          <div class="err" id="e-empDept" hidden></div></div>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:8px"><button class="btn primary" id="next1" type="button">ถัดไป</button></div>
+    </div>`;
+  }
+
+  if(f.step===2){
+    const s=SITES.find(x=>String(x.seq)===String(f.siteSeq));
+    body=`<div class="card pad">
+      <div class="eyebrow">งานที่ต้องการแจ้ง</div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:12px">
+        <div><label class="f" for="siteSel">สถานที่ติดตั้ง <span>*</span></label>
+          <select class="in" id="siteSel"><option value="">— เลือกสถานที่ —</option>
+          ${SITES.map(x=>`<option value="${x.seq}" ${String(x.seq)===String(f.siteSeq)?"selected":""}>${x.seq}. ${esc(x.name)} (${esc(x.prov)})</option>`).join("")}
+          </select><div class="err" id="e-site" hidden></div></div>
+        <div><label class="f" for="stageSel">ขั้นตอนงาน <span>*</span></label>
+          <select class="in" id="stageSel">${STAGES.map(g=>`<option value="${g.k}" ${f.stage===g.k?"selected":""}>${g.n}</option>`).join("")}</select></div>
+        <div><label class="f" for="statusSel">สถานะ <span>*</span></label>
+          <select class="in" id="statusSel">
+            <option value="done" ${f.status==="done"?"selected":""}>แล้วเสร็จ</option>
+            <option value="progress" ${f.status==="progress"?"selected":""}>กำลังดำเนินการ</option>
+            <option value="issue" ${f.status==="issue"?"selected":""}>มีปัญหา / ติดขัด</option>
+            <option value="none" ${f.status==="none"?"selected":""}>ยังไม่ดำเนินการ</option>
+          </select></div>
+      </div>
+      <div style="margin-top:14px"><label class="f" for="note">บันทึกเพิ่มเติม</label>
+        <textarea class="in" id="note" rows="3" placeholder="เช่น ติดตั้งแผง 16 แผ่นครบ รอเชื่อมต่ออินเวอร์เตอร์">${esc(f.note)}</textarea></div>
+      ${s?`<div class="card pad" style="margin-top:14px;background:var(--surface-2);box-shadow:none">
+        <div class="eyebrow">ข้อมูลตามแผน</div>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:8px;font-size:13px">
+          <div><div style="color:var(--ink-3);font-size:12px">รับของ</div><b class="num">${fdate(s.recv)}</b></div>
+          <div><div style="color:var(--ink-3);font-size:12px">ต้องเสร็จภายใน</div><b class="num">${fdate(s.due)}</b></div>
+          <div><div style="color:var(--ink-3);font-size:12px">ขนาด</div><b class="num">${s.kwp} kWp · ${s.pv} แผง</b></div>
+          <div><div style="color:var(--ink-3);font-size:12px">ผู้รับผิดชอบ</div><b>${esc(s.owner)}</b></div>
+          <div style="grid-column:1/-1"><div style="color:var(--ink-3);font-size:12px">WBS</div><b style="font-family:ui-monospace,monospace;font-size:12.5px">${esc(s.wbs)}</b></div>
+        </div></div>`:""}
+      <div style="margin-top:18px;display:flex;gap:8px"><button class="btn" id="back2" type="button">ย้อนกลับ</button>
+        <button class="btn primary" id="next2" type="button">ถัดไป</button></div>
+    </div>`;
+  }
+
+  if(f.step===3){
+    const g=f.geo;
+    body=`<div class="card pad">
+      <div class="eyebrow">รูปถ่ายการติดตั้ง (อย่างน้อย 2 รูป)</div>
+      <p style="color:var(--ink-2);font-size:13px;margin:6px 0 4px">ระบบจะดึงพิกัด GPS อัตโนมัติและปั๊มลงบนรูปพร้อมวันเวลาและชื่อสถานที่ก่อนบันทึก</p>
+      <div class="geo">
+        <button class="btn" id="geobtn" type="button">${g?"อ่านพิกัดใหม่":"ขอพิกัดจากเครื่อง"}</button>
+        <span id="geotxt">${g?`<code class="num">${g.lat.toFixed(6)}, ${g.lng.toFixed(6)}</code> ±${Math.round(g.acc)} ม.`:'<span style="color:var(--ink-3)">ยังไม่มีพิกัด</span>'}</span>
+        <button class="btn" id="manbtn" type="button">กรอกพิกัดเอง</button>
+      </div>
+      <div id="manbox" hidden style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+        <input class="in num" id="mlat" placeholder="ละติจูด เช่น 18.788" style="max-width:190px">
+        <input class="in num" id="mlng" placeholder="ลองจิจูด เช่น 98.993" style="max-width:190px">
+        <button class="btn" id="mok" type="button">ใช้พิกัดนี้</button>
+      </div>
+      <div class="drop" style="margin-top:14px">
+        <input type="file" id="pick" accept="image/*" capture="environment" multiple hidden>
+        <button class="btn primary" id="pickbtn" type="button">เลือก / ถ่ายรูป</button>
+        <div class="hint">รองรับ JPG/PNG · ระบบย่อขนาดและปั๊มพิกัดให้อัตโนมัติ</div>
+      </div>
+      <div class="shots" id="shots"></div>
+      <div class="err" id="e-photo" hidden></div>
+      <div style="margin-top:18px;display:flex;gap:8px"><button class="btn" id="back3" type="button">ย้อนกลับ</button>
+        <button class="btn primary" id="next3" type="button">ถัดไป</button></div>
+    </div>`;
+  }
+
+  if(f.step===4){
+    const s=SITES.find(x=>String(x.seq)===String(f.siteSeq));
+    const stg=STAGES.find(g=>g.k===f.stage);
+    const stTxt={done:"แล้วเสร็จ",progress:"กำลังดำเนินการ",issue:"มีปัญหา / ติดขัด",none:"ยังไม่ดำเนินการ"}[f.status];
+    body=`<div class="card pad">
+      <div class="eyebrow">ตรวจทานก่อนส่ง</div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:12px;font-size:13.5px">
+        <div><div style="color:var(--ink-3);font-size:12px">ผู้แจ้ง</div><b>${esc(f.emp.name)}</b>
+          <div style="font-size:12px;color:var(--ink-3)" class="num">รหัส ${esc(f.emp.id)} · ${esc(f.emp.dept)}</div></div>
+        <div><div style="color:var(--ink-3);font-size:12px">สถานที่</div><b>${esc(s?s.name:"-")}</b>
+          <div style="font-size:12px;color:var(--ink-3)">${esc(s?s.prov:"")}</div></div>
+        <div><div style="color:var(--ink-3);font-size:12px">ขั้นตอน</div><b>${esc(stg.n)}</b>
+          <div style="font-size:12px;color:var(--ink-3)">สถานะ: ${stTxt}</div></div>
+        <div><div style="color:var(--ink-3);font-size:12px">พิกัด</div>
+          <b class="num">${f.geo?f.geo.lat.toFixed(6)+", "+f.geo.lng.toFixed(6):"-"}</b></div>
+      </div>
+      ${f.note?`<div style="margin-top:12px"><div style="color:var(--ink-3);font-size:12px">บันทึก</div>${esc(f.note)}</div>`:""}
+      <div class="shots">${f.photos.map(p=>`<div class="shot"><img src="${p.url}" alt="รูปการติดตั้ง"></div>`).join("")}</div>
+      <div class="err" id="e-send" hidden></div>
+      <div style="margin-top:18px;display:flex;gap:8px;align-items:center">
+        <button class="btn" id="back4" type="button">ย้อนกลับ</button>
+        <button class="btn primary" id="send" type="button">ส่งรายงาน</button>
+        <span id="sendmsg" style="font-size:13px;color:var(--ink-3)"></span></div>
+    </div>`;
+  }
+  $("#v-report").innerHTML=head+body;
+  wireForm();
+}
+
+function wireForm(){
+  const f=state.form;
+  const fail=(id,msg)=>{const e=$("#e-"+id);if(e){e.textContent=msg;e.hidden=false;}};
+  if(f.step===1){
+    $("#next1").onclick=()=>{
+      f.emp.id=$("#empId").value.trim(); f.emp.name=$("#empName").value.trim(); f.emp.dept=$("#empDept").value.trim();
+      $$("#v-report .err").forEach(e=>e.hidden=true);
+      let ok=true;
+      if(!/^\d{4,10}$/.test(f.emp.id)){fail("empId","กรอกรหัสพนักงานเป็นตัวเลข 4–10 หลัก");ok=false;}
+      if(f.emp.name.split(/\s+/).filter(Boolean).length<2){fail("empName","กรอกทั้งชื่อและนามสกุล");ok=false;}
+      if(f.emp.dept.length<2){fail("empDept","ระบุสังกัด เช่น กฟส.เมืองลำพูน");ok=false;}
+      if(ok){f.step=2;renderReport();}
+    };
+  }
+  if(f.step===2){
+    const sync=()=>{f.siteSeq=$("#siteSel").value;f.stage=$("#stageSel").value;f.status=$("#statusSel").value;f.note=$("#note").value;};
+    ["siteSel","stageSel","statusSel"].forEach(id=>$("#"+id).onchange=()=>{sync();if(id==="siteSel")renderReport();});
+    $("#note").oninput=sync;
+    $("#back2").onclick=()=>{sync();f.step=1;renderReport();};
+    $("#next2").onclick=()=>{sync();$$("#v-report .err").forEach(e=>e.hidden=true);
+      if(!f.siteSeq){fail("site","เลือกสถานที่ติดตั้งก่อน");return;} f.step=3;renderReport();};
+  }
+  if(f.step===3){
+    drawShots();
+    $("#geobtn").onclick=askGeo;
+    $("#manbtn").onclick=()=>{const b=$("#manbox");b.hidden=!b.hidden;};
+    $("#mok").onclick=()=>{
+      const la=parseFloat($("#mlat").value),ln=parseFloat($("#mlng").value);
+      if(isNaN(la)||isNaN(ln)||la<5||la>21||ln<96||ln>106){alert("พิกัดไม่ถูกต้อง — ละติจูดประมาณ 5–21, ลองจิจูดประมาณ 96–106");return;}
+      f.geo={lat:la,lng:ln,acc:0,manual:true};renderReport();};
+    $("#pickbtn").onclick=()=>$("#pick").click();
+    $("#pick").onchange=e=>addPhotos([...e.target.files]);
+    $("#back3").onclick=()=>{f.step=2;renderReport();};
+    $("#next3").onclick=()=>{
+      $$("#v-report .err").forEach(e=>e.hidden=true);
+      if(f.photos.length<2){fail("photo","ต้องแนบรูปถ่ายอย่างน้อย 2 รูป");return;}
+      if(!f.geo){fail("photo","ต้องมีพิกัด GPS ก่อน — กดขอพิกัดจากเครื่อง หรือกรอกเอง");return;}
+      f.step=4;renderReport();};
+    if(!f.geo) askGeo();
+  }
+  if(f.step===4){
+    $("#back4").onclick=()=>{f.step=3;renderReport();};
+    $("#send").onclick=submitReport;
+  }
+}
+
+/* ---------- geolocation ---------- */
+function getGeo(){
+  return new Promise(res=>{
+    if(!navigator.geolocation) return res(null);
+    navigator.geolocation.getCurrentPosition(
+      p=>res({lat:p.coords.latitude,lng:p.coords.longitude,acc:p.coords.accuracy||0}),
+      ()=>res(null),
+      {enableHighAccuracy:true,timeout:15000,maximumAge:20000});
+  });
+}
+async function askGeo(){
+  const t=$("#geotxt");
+  if(!navigator.geolocation){if(t)t.innerHTML='<span style="color:var(--crit)">เครื่องนี้ไม่รองรับ GPS — กรุณากรอกพิกัดเอง</span>';return null;}
+  if(t)t.innerHTML='<span style="color:var(--ink-3)">กำลังอ่านพิกัด…</span>';
+  const g=await getGeo();
+  if(g){state.form.geo=g;renderReport();return g;}
+  if(t)t.innerHTML='<span style="color:var(--crit)">อ่านพิกัดไม่สำเร็จ — เปิด GPS และอนุญาตตำแหน่ง หรือกรอกพิกัดเอง<br>ถ้าเปิดจากลิงก์ในไลน์ ให้เปิดใน Safari/Chrome ก่อน</span>';
+  return null;
+}
+
+/* ---------- photo: resize + stamp ---------- */
+function loadImg(file){return new Promise((res,rej)=>{
+  const fr=new FileReader();
+  fr.onload=()=>{const i=new Image();
+    i.onload=()=>res(i);
+    i.onerror=()=>rej(new Error("อ่านรูปไม่ได้ ลองถ่ายใหม่หรือเลือกไฟล์อื่น"));
+    i.decoding="sync"; i.src=fr.result;};
+  fr.onerror=()=>rej(new Error("อ่านไฟล์รูปไม่ได้"));
+  fr.readAsDataURL(file);});}
+
+async function stamp(file){
+  const img=await loadImg(file);
+  const MAX=1440, sc=Math.min(1,MAX/Math.max(img.width,img.height));
+  const w=Math.round(img.width*sc), h=Math.round(img.height*sc);
+  const cv=document.createElement("canvas"); cv.width=w; cv.height=h;
+  const cx=cv.getContext("2d");
+  cx.fillStyle="#FFFFFF"; cx.fillRect(0,0,w,h);
+  cx.drawImage(img,0,0,w,h);
+  const g=state.form.geo, s=SITES.find(x=>String(x.seq)===String(state.form.siteSeq));
+  const now=new Date();
+  const L=[
+    `${s?s.name:""}${s?" · "+s.prov:""}`,
+    g?`พิกัด ${g.lat.toFixed(6)}, ${g.lng.toFixed(6)}${g.acc?`  (±${Math.round(g.acc)} ม.)`:""}`:"ไม่มีพิกัด",
+    `${fdt(now.getTime())} น. · ผู้แจ้ง ${state.form.emp.name} (${state.form.emp.id})`
+  ];
+  const fs=Math.max(15,Math.round(w*0.0235)), pad=Math.round(fs*0.7), lh=Math.round(fs*1.42);
+  const bh=lh*L.length+pad*2;
+  const grd=cx.createLinearGradient(0,h-bh-fs,0,h);
+  grd.addColorStop(0,"rgba(8,12,10,0)"); grd.addColorStop(0.3,"rgba(8,12,10,.72)"); grd.addColorStop(1,"rgba(8,12,10,.86)");
+  cx.fillStyle=grd; cx.fillRect(0,h-bh-fs,w,bh+fs);
+  cx.fillStyle="#E8A33C"; cx.fillRect(pad,h-bh+pad*0.4,Math.round(fs*0.28),bh-pad*1.2);
+  cx.textBaseline="top"; cx.fillStyle="#fff";
+  L.forEach((line,i)=>{
+    cx.font=`${i===0?"600 ":""}${fs}px "IBM Plex Sans Thai", sans-serif`;
+    cx.fillStyle=i===0?"#FFFFFF":"rgba(255,255,255,.9)";
+    cx.fillText(line,pad*2+fs*0.28,h-bh+pad+i*lh);
+  });
+  const blob=await new Promise(r=>cv.toBlob(r,"image/jpeg",0.82));
+  return {blob,url:cv.toDataURL("image/jpeg",0.6)};
+}
+
+async function addPhotos(files){
+  const f=state.form, err=$("#e-photo");
+  if(!f.geo){ await askGeo(); }
+  if(!f.geo){
+    if(err){err.textContent="ยังไม่มีพิกัด — กดขอพิกัดจากเครื่อง หรือกรอกพิกัดเอง ก่อนถ่ายรูป (ระบบต้องปั๊มพิกัดลงบนรูป)";err.hidden=false;}
+    return;
+  }
+  let bad=0;
+  for(const file of files){
+    if(f.photos.length>=6){break;}
+    if(!file.type.startsWith("image/"))continue;
+    try{ const {blob,url}=await stamp(file); f.photos.push({blob,url,ts:Date.now()}); }
+    catch(e){ bad++; console.warn(e); }
+  }
+  renderReport();
+  if(bad){const e2=$("#e-photo"); if(e2){e2.textContent=`ประมวลผลรูปไม่สำเร็จ ${bad} ไฟล์ — ลองถ่ายใหม่ด้วยกล้องในแอป`;e2.hidden=false;}}
+}
+function drawShots(){
+  const box=$("#shots"); if(!box)return;
+  box.innerHTML=state.form.photos.map((p,i)=>`<div class="shot"><img src="${p.url}" alt="รูปที่ ${i+1}">
+    <button type="button" data-rm="${i}" aria-label="ลบรูปที่ ${i+1}">×</button></div>`).join("")||"";
+  $$("#shots [data-rm]").forEach(b=>b.onclick=()=>{state.form.photos.splice(+b.dataset.rm,1);renderReport();});
+}
+
+/* ---------- submit ---------- */
+function toJpegData(blob){return new Promise((res,rej)=>{const fr=new FileReader();
+  fr.onload=()=>res(fr.result); fr.onerror=()=>rej(new Error("อ่านไฟล์รูปไม่ได้")); fr.readAsDataURL(blob);});}
+
+async function submitReport(){
+  const f=state.form, btn=$("#send"), msg=$("#sendmsg"), err=$("#e-send");
+  if(state.online===false){
+    err.innerHTML='<b>ยังติดต่อเซิร์ฟเวอร์ไม่ได้</b><br>ตรวจสอบสัญญาณอินเทอร์เน็ต แล้วกดส่งอีกครั้ง — ข้อมูลที่กรอกไว้ยังอยู่';
+    err.hidden=false; return;
+  }
+  btn.disabled=true; err.hidden=true; msg.textContent="กำลังอัปโหลดรูป…";
+  try{
+    const site=SITES.find(x=>String(x.seq)===String(f.siteSeq));
+    const photos=[]; for(const p of f.photos) photos.push(await toJpegData(p.blob));
+    msg.textContent="กำลังบันทึกรายงาน…";
+    const r=await call("submit",{
+      siteSeq:site.seq, siteName:site.name, prov:site.prov,
+      stage:f.stage, status:f.status, note:f.note,
+      empId:f.emp.id, empName:f.emp.name, empDept:f.emp.dept,
+      lat:f.geo.lat, lng:f.geo.lng, acc:f.geo.acc||0, manualGeo:!!f.geo.manual,
+      photos, pin:state.pin||""
+    });
+    if(!r||!r.ok) throw new Error(r&&r.error||"บันทึกไม่สำเร็จ");
+    await refresh(true);
+    msg.textContent="";
+    state.form={step:1,emp:f.emp,siteSeq:"",stage:"main",status:"done",note:"",photos:[],geo:f.geo};
+    go("db");
+    toast("บันทึกการแจ้งสถานะเรียบร้อย");
+  }catch(e){
+    err.textContent="บันทึกไม่สำเร็จ: "+(e&&e.message||"ไม่ทราบสาเหตุ")+" — ลองกดส่งใหม่อีกครั้ง";
+    err.hidden=false; msg.textContent="";
+  }
+  btn.disabled=false;
+}
+function toast(t){
+  const d=document.createElement("div");
+  d.textContent=t; d.style.cssText="position:fixed;left:50%;transform:translateX(-50%);bottom:26px;z-index:99;background:var(--ink);color:var(--ground);padding:10px 18px;border-radius:9px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.25)";
+  document.body.appendChild(d); setTimeout(()=>d.remove(),2600);
+}
+
+/* =======================================================================  DATABASE VIEW  */
+function photoSrc(p,big){ const id=typeof p==="string"?p:(p&&p.id)||"";
+  return id?`https://drive.google.com/thumbnail?id=${id}&sz=${big?"w1600":"w480"}`:""; }
+const ST_TXT={done:["p-ok","แล้วเสร็จ"],progress:["p-warn","กำลังดำเนินการ"],issue:["p-crit","มีปัญหา"],none:["p-idle","ยังไม่ดำเนินการ"]};
+const stageName=k=>(STAGES.find(x=>x.k===k)||{}).n||k;
+const statusName=k=>(ST_TXT[k]||ST_TXT.none)[1];
+
+function renderDB(){
+  const q=state.dbFilt.q.trim().toLowerCase(), tab=state.dbFilt.tab;
+  const match=r=>!q||[r.siteName,r.empName,r.empId,r.empDept,r.note].some(v=>String(v||"").toLowerCase().includes(q));
+  const nLive=live().length, nGone=state.reports.filter(r=>r.deleted).length;
+
+  const chips=`<div class="chips">
+      <button class="chip" data-tab="live" aria-pressed="${tab==="live"}">รายการที่ใช้งาน (${nLive})</button>
+      <button class="chip" data-tab="gone" aria-pressed="${tab==="gone"}">ที่ถูกลบ (${nGone})</button>
+      <button class="chip" data-tab="log" aria-pressed="${tab==="log"}">บันทึกการลบ / แก้ไข (${state.audit.length})</button>
+      <input class="in" id="dq" placeholder="ค้นหา สถานที่ / ผู้แจ้ง / รหัสพนักงาน" value="${esc(state.dbFilt.q)}" style="max-width:300px;margin-left:auto">
+      <button class="btn" id="csv" type="button">ส่งออก CSV</button>
+    </div>`;
+
+  let table;
+  if(tab==="log"){
+    const body=state.audit.filter(a=>!q||[a.siteName,a.byName,a.byId,a.reason].some(v=>String(v||"").toLowerCase().includes(q)))
+      .sort((a,b)=>b.ts-a.ts).map(a=>`<tr>
+        <td class="num" style="white-space:nowrap">${fdt(a.ts)}</td>
+        <td><span class="pill ${a.action==="delete"?"p-crit":"p-ok"}">${a.action==="delete"?"ลบรายการ":"กู้คืนรายการ"}</span></td>
+        <td><b>${esc(a.byName)}</b><div style="font-size:12px;color:var(--ink-3)" class="num">รหัส ${esc(a.byId)}${a.byDept?" · "+esc(a.byDept):""}</div></td>
+        <td>${esc(a.siteName)}<div style="font-size:12px;color:var(--ink-3)">${esc(stageName(a.stage))} · ${esc(statusName(a.status))}</div></td>
+        <td style="max-width:260px">${esc(a.reason||"—")}</td>
+        <td style="font-size:12px;color:var(--ink-3)">แจ้งโดย ${esc(a.origName||"-")}<div class="num">${a.origTs?fdt(a.origTs):""}</div></td>
+      </tr>`).join("");
+    table=`<div class="card tablewrap"><table style="min-width:900px"><thead><tr>
+      <th>วันเวลาที่ทำรายการ</th><th>การกระทำ</th><th>ผู้ทำรายการ</th><th>รายการที่ถูกลบ</th><th>เหตุผล</th><th>ข้อมูลเดิม</th>
+      </tr></thead><tbody>${body||`<tr><td colspan="6" class="empty">ยังไม่มีการลบหรือแก้ไขรายการ</td></tr>`}</tbody></table></div>`;
+  }else{
+    const rows=state.reports.filter(r=>tab==="gone"?r.deleted:!r.deleted).filter(match).sort((a,b)=>b.ts-a.ts);
+    const body=rows.map(r=>{
+      const[c,t]=ST_TXT[r.status]||ST_TXT.none;
+      return `<tr class="${r.deleted?"gone":""}">
+        <td class="num" style="white-space:nowrap">${fdt(r.ts)}</td>
+        <td><button class="linkbtn" data-site="${r.siteSeq}">${esc(r.siteName)}</button><div style="font-size:12px;color:var(--ink-3)">${esc(r.prov)}</div></td>
+        <td>${esc(stageName(r.stage))}</td>
+        <td><span class="pill ${c}">${t}</span></td>
+        <td>${esc(r.empName)}<div style="font-size:12px;color:var(--ink-3)" class="num">${esc(r.empId)} · ${esc(r.empDept)}</div></td>
+        <td class="num" style="white-space:nowrap"><a href="https://www.google.com/maps?q=${r.lat},${r.lng}" target="_blank" rel="noopener">${r.lat.toFixed(5)}, ${r.lng.toFixed(5)}</a></td>
+        <td style="max-width:200px">${esc(r.note||"—")}</td>
+        <td><div style="display:flex;gap:5px">${(r.photos||[]).map((p,i)=>
+          `<img src="${photoSrc(p)}" alt="รูปที่ ${i+1} ของ ${esc(r.siteName)}" data-big="${photoSrc(p,1)}"
+            style="width:52px;height:40px;object-fit:cover;border-radius:5px;border:1px solid var(--line);cursor:zoom-in">`).join("")}</div></td>
+        <td>${r.deleted
+          ? `<div style="font-size:12px;color:var(--crit)">ลบโดย ${esc(r.delName)}<div class="num" style="color:var(--ink-3)">รหัส ${esc(r.delId)} · ${fdt(r.delTs)}</div></div>
+             <button class="btn" data-restore="${r.id}" style="margin-top:5px;font-size:12px;padding:4px 9px">กู้คืน</button>`
+          : `<button class="btn danger" data-del="${r.id}" style="font-size:12px;padding:5px 10px">ลบ</button>`}</td>
+      </tr>`;}).join("");
+    table=`<div class="card tablewrap"><table style="min-width:1080px"><thead><tr>
+      <th>วันเวลาที่แจ้ง</th><th>สถานที่</th><th>ขั้นตอน</th><th>สถานะ</th><th>ผู้แจ้ง</th><th>พิกัด</th><th>บันทึก</th><th>รูปถ่าย</th><th>จัดการ</th>
+      </tr></thead><tbody>${body||`<tr><td colspan="9" class="empty">${tab==="gone"?"ไม่มีรายการที่ถูกลบ":"ยังไม่มีการแจ้งสถานะ — เริ่มที่เมนู “แจ้งสถานะหน้างาน”"}</td></tr>`}</tbody></table></div>`;
+  }
+
+  $("#v-db").innerHTML=chips+table+
+    `<p class="hint" style="margin-top:10px">การลบเป็นการ “ซ่อนออกจากการคำนวณ” เท่านั้น ข้อมูลเดิมและรูปถ่ายยังถูกเก็บไว้ พร้อมบันทึกว่าใครลบ เมื่อใด และด้วยเหตุผลใด — กู้คืนได้ตลอดเวลา</p>`;
+  $("#dq").oninput=e=>{state.dbFilt.q=e.target.value;renderDB();};
+  $("#csv").onclick=exportCSV;
+  $$("#v-db [data-tab]").forEach(b=>b.onclick=()=>{state.dbFilt.tab=b.dataset.tab;renderDB();});
+  $$("#v-db [data-big]").forEach(im=>im.onclick=()=>openBig(im.dataset.big));
+  $$("#v-db [data-del]").forEach(b=>b.onclick=()=>askDelete(b.dataset.del,"delete"));
+  $$("#v-db [data-restore]").forEach(b=>b.onclick=()=>askDelete(b.dataset.restore,"restore"));
+  wireSiteLinks("#v-db");
+}
+
+/* ---------- ลบ / กู้คืน พร้อมบันทึก log ว่าใครทำ ---------- */
+function askDelete(id,action){
+  const r=state.reports.find(x=>x.id===id); if(!r)return;
+  const del=action==="delete";
+  const m=document.createElement("div"); m.className="modal";
+  m.innerHTML=`<div class="box" style="max-width:520px">
+    <h2 style="font-size:17px">${del?"ลบรายการแจ้งสถานะ":"กู้คืนรายการ"}</h2>
+    <p style="color:var(--ink-2);font-size:13px;margin:6px 0 14px">
+      ${esc(r.siteName)} · ${esc(stageName(r.stage))} · แจ้งโดย ${esc(r.empName)} เมื่อ ${fdt(r.ts)}<br>
+      ระบบจะบันทึกไว้ว่าใครเป็นผู้${del?"ลบ":"กู้คืน"} และตรวจสอบย้อนหลังได้</p>
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+      <div><label class="f" for="dId">รหัสพนักงานผู้ทำรายการ <span>*</span></label><input class="in num" id="dId" inputmode="numeric"></div>
+      <div><label class="f" for="dName">ชื่อ - นามสกุล <span>*</span></label><input class="in" id="dName"></div>
+    </div>
+    <div style="margin-top:12px"><label class="f" for="dDept">สังกัด</label><input class="in" id="dDept" list="units"></div>
+    <div style="margin-top:12px"><label class="f" for="dWhy">เหตุผล <span>*</span></label>
+      <textarea class="in" id="dWhy" rows="2" placeholder="${del?"เช่น แจ้งซ้ำกับรายการเวลา 09:12 / แนบรูปผิดสถานที่":"เช่น ลบผิดรายการ"}"></textarea>
+      <div class="hint">อย่างน้อย 10 ตัวอักษร</div></div>
+    <div class="err" id="dErr" hidden></div>
+    <div style="margin-top:16px;display:flex;gap:8px;justify-content:flex-end">
+      <button class="btn" id="dCancel" type="button">ยกเลิก</button>
+      <button class="btn ${del?"primary":"primary"}" id="dOk" type="button">${del?"ยืนยันลบ":"ยืนยันกู้คืน"}</button></div>
+  </div>`;
+  document.body.appendChild(m);
+  const e=$("#dId",m); e.value=state.form.emp.id; $("#dName",m).value=state.form.emp.name; $("#dDept",m).value=state.form.emp.dept;
+  $("#dCancel",m).onclick=()=>m.remove();
+  m.addEventListener("click",ev=>{if(ev.target===m)m.remove();});
+  $("#dOk",m).onclick=async()=>{
+    const byId=$("#dId",m).value.trim(), byName=$("#dName",m).value.trim(),
+          byDept=$("#dDept",m).value.trim(), reason=$("#dWhy",m).value.trim();
+    const err=$("#dErr",m);
+    if(!/^\d{4,10}$/.test(byId)){err.textContent="กรอกรหัสพนักงานเป็นตัวเลข 4–10 หลัก";err.hidden=false;return;}
+    if(byName.split(/\s+/).filter(Boolean).length<2){err.textContent="กรอกทั้งชื่อและนามสกุล";err.hidden=false;return;}
+    if(reason.length<10){err.textContent="ระบุเหตุผลอย่างน้อย 10 ตัวอักษร";err.hidden=false;return;}
+    err.hidden=true; $("#dOk",m).disabled=true;
+    try{
+      const res=await call("delete",{reportId:id,action:del?"delete":"restore",byId,byName,byDept,reason});
+      if(!res||!res.ok) throw new Error(res&&res.error||"ทำรายการไม่สำเร็จ");
+      await refresh(true);
+      m.remove(); toast(del?"ลบรายการแล้ว — บันทึกผู้ลบไว้ในระบบ":"กู้คืนรายการเรียบร้อย");
+    }catch(ex){
+      err.textContent="ทำรายการไม่สำเร็จ: "+(ex&&ex.message||"ไม่ทราบสาเหตุ");
+      err.hidden=false; $("#dOk",m).disabled=false;
+    }
+  };
+}
+
+/* =======================================================================  SITE DETAIL  */
+function renderSite(){
+  const s=SITES.find(x=>x.seq===state.siteSel);
+  if(!s){$("#v-site").innerHTML=`<div class="empty">ไม่พบสถานที่</div>`;return;}
+  const st=siteStatus(s), d=daysTo(s.due);
+  const rs=state.reports.filter(r=>r.siteSeq===s.seq).sort((a,b)=>b.ts-a.ts);
+  const timeCls=st.main===1?"p-ok":d<0?"p-crit":d<=7?"p-warn":"p-idle";
+  const timeTxt=st.main===1?"ติดตั้งแล้วเสร็จ":d<0?`เลยกำหนด ${-d} วัน`:d===0?"ครบกำหนดวันนี้":`เหลืออีก ${d} วัน`;
+
+  const tl=rs.map(r=>{
+    const cls=r.deleted?"gone":r.status==="done"?"ok":r.status==="issue"?"crit":r.status==="progress"?"warn":"";
+    const[c,t]=ST_TXT[r.status]||ST_TXT.none;
+    return `<li class="${cls}">
+      <div style="display:flex;gap:9px;align-items:baseline;flex-wrap:wrap">
+        <b>${esc(stageName(r.stage))}</b><span class="pill ${c}">${t}</span>
+        <span class="num" style="font-size:12.5px;color:var(--ink-3)">${fdt(r.ts)} น.</span>
+        ${r.deleted?`<span class="pill p-crit">ถูกลบโดย ${esc(r.delName)}</span>`:""}
+      </div>
+      <div style="font-size:13px;color:var(--ink-2);margin-top:3px">
+        ผู้แจ้ง ${esc(r.empName)} <span class="num">(${esc(r.empId)})</span> · ${esc(r.empDept)}</div>
+      ${r.note?`<div style="font-size:13px;margin-top:4px">${esc(r.note)}</div>`:""}
+      <div style="font-size:12.5px;margin-top:4px">พิกัด
+        <a href="https://www.google.com/maps?q=${r.lat},${r.lng}" target="_blank" rel="noopener" class="num">${r.lat.toFixed(6)}, ${r.lng.toFixed(6)}</a>
+        ${r.manualGeo?' <span class="pill p-warn">กรอกพิกัดเอง</span>':""}</div>
+      ${r.deleted&&r.delReason?`<div style="font-size:12.5px;margin-top:4px;color:var(--crit)">เหตุผลที่ลบ: ${esc(r.delReason)}</div>`:""}
+      <div class="shots" style="margin-top:8px">${(r.photos||[]).map((p,i)=>
+        `<div class="shot"><img src="${photoSrc(p)}" alt="รูปที่ ${i+1}" data-big="${photoSrc(p,1)}" style="cursor:zoom-in"></div>`).join("")}</div>
+    </li>`;}).join("");
+
+  $("#v-site").innerHTML=`
+    <button class="btn" id="backsite" type="button" style="margin-bottom:14px">← กลับไปภาพรวม</button>
+    <div class="card pad">
+      <div style="display:flex;gap:12px;align-items:baseline;flex-wrap:wrap">
+        <h2 style="font-size:20px">${s.seq}. ${esc(s.name)}</h2>
+        <span class="pill ${timeCls}">${timeTxt}</span>
+      </div>
+      <div style="color:var(--ink-3);font-size:13px;margin-top:2px">${esc(s.prov)} · เที่ยวที่ ${s.trip} · ${esc(s.owner)}</div>
+      <div class="kv" style="margin-top:16px">
+        <div><div class="k">วันที่รับของ</div><b class="num">${fdate(s.recv)}</b></div>
+        <div><div class="k">ต้องติดตั้งให้แล้วเสร็จ</div><b class="num">${fdate(s.due)}</b></div>
+        <div><div class="k">ขนาดติดตั้ง</div><b class="num">${s.kwp} kWp · ${s.pv} แผง</b></div>
+        <div><div class="k">วงเงิน (ไม่รวม VAT)</div><b class="num">${nf(s.budget)} บาท</b></div>
+        <div style="grid-column:span 2"><div class="k">หมายเลข WBS</div><b style="font-family:ui-monospace,monospace;font-size:12.5px">${esc(s.wbs)}</b></div>
+      </div>
+      <div style="margin-top:18px;display:grid;gap:8px">
+        ${(()=>{const ev=evidenceOf(s);return STAGES.map(g=>{const[c,t]=lvlPill(st[g.k]);
+          return `<div style="display:flex;gap:10px;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line-2)">
+            <span style="font-size:13.5px">${g.n}</span>
+            <span style="display:flex;gap:7px;align-items:center">${proofMark(g.k,st[g.k],ev[g.k])}<span class="pill ${c}">${t}</span></span></div>`;}).join("");})()}
+      </div>
+      <button class="btn primary" id="repsite" type="button" style="margin-top:16px">+ แจ้งสถานะแห่งนี้</button>
+    </div>
+    <div class="sec"><h2>ประวัติการแจ้งสถานะ</h2><span class="note">${rs.length} รายการ · เรียงจากล่าสุด</span></div>
+    ${rs.length?`<div class="card pad"><ul class="tl">${tl}</ul></div>`:`<div class="card"><div class="empty">ยังไม่มีการแจ้งสถานะของจุดนี้</div></div>`}`;
+  $("#backsite").onclick=()=>go("overview");
+  $("#repsite").onclick=()=>{state.form.siteSeq=String(s.seq);state.form.step=1;go("report");};
+  $$("#v-site [data-big]").forEach(im=>im.onclick=()=>openBig(im.dataset.big));
+}
+function openBig(src){
+  const m=document.createElement("div"); m.className="modal";
+  m.innerHTML=`<div class="box"><img src="${src}" alt="รูปการติดตั้งขนาดเต็ม" style="width:100%;border-radius:8px">
+    <div style="margin-top:12px;text-align:right"><button class="btn" type="button">ปิด</button></div></div>`;
+  m.onclick=e=>{if(e.target===m||e.target.tagName==="BUTTON")m.remove();};
+  document.body.appendChild(m);
+}
+const REP_HEAD=["วันเวลา","ลำดับ","สถานที่","จังหวัด","ขั้นตอน","สถานะ","รหัสพนักงาน","ชื่อผู้แจ้ง","สังกัด","ละติจูด","ลองจิจูด","บันทึก","จำนวนรูป","สถานะรายการ","ผู้ลบ","เหตุผลที่ลบ"];
+const repRows=()=>[...state.reports].sort((a,b)=>b.ts-a.ts).map(r=>[
+  fdt(r.ts),r.siteSeq,r.siteName,r.prov,stageName(r.stage),statusName(r.status),
+  r.empId,r.empName,r.empDept,r.lat,r.lng,(r.note||"").replace(/\n/g," "),(r.photos||[]).length,
+  r.deleted?"ถูกลบ":"ใช้งาน", r.deleted?`${r.delName} (${r.delId})`:"", r.deleted?(r.delReason||""):""]);
+const AUD_HEAD=["วันเวลาที่ทำรายการ","การกระทำ","รหัสผู้ทำรายการ","ชื่อผู้ทำรายการ","สังกัด","สถานที่","ขั้นตอน","เหตุผล","ผู้แจ้งเดิม","เวลาที่แจ้งเดิม"];
+const audRows=()=>[...state.audit].sort((a,b)=>b.ts-a.ts).map(a=>[
+  fdt(a.ts), a.action==="delete"?"ลบรายการ":"กู้คืนรายการ", a.byId,a.byName,a.byDept||"",
+  a.siteName, stageName(a.stage), a.reason||"", a.origName||"", a.origTs?fdt(a.origTs):""]);
+
+function saveFile(filename,data){
+  const blob=(data instanceof Blob)?data:new Blob([data],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob); a.download=filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1500);
+  toast("กำลังดาวน์โหลดไฟล์");
+}
+function exportCSV(){
+  const csv="﻿"+[REP_HEAD,...repRows()].map(r=>r.map(c=>`"${String(c??"").replace(/"/g,'""')}"`).join(",")).join("\n");
+  saveFile("solar-n1-reports.csv",csv);
+}
+async function exportXLSX(){
+  if(typeof XLSX==="undefined"){toast("ตัวสร้างไฟล์ Excel ยังโหลดไม่เสร็จ ลองอีกครั้ง");return;}
+  const rows=SITES.map(s=>({s,st:siteStatus(s)}));
+  const doneMain=rows.filter(r=>r.st.main===1).length;
+  const sum=[
+    ["รายงานสรุปการติดตั้ง Solar Rooftop ระยะที่ 4 — กฟน.1"],
+    ["สัญญาเลขที่ บ.45/2569 ลงวันที่ 9 ก.ค. 2026"],
+    ["ข้อมูล ณ วันที่", fdt(Date.now())],[],
+    ["ตัวชี้วัด","จำนวน","หน่วย"],
+    ["จุดติดตั้งตามแผน",36,"แห่ง"],
+    ["ติดตั้งหลักแล้วเสร็จ",doneMain,"แห่ง"],
+    ["คิดเป็นความคืบหน้า",+(doneMain/36*100).toFixed(1),"%"],
+    ["เลยกำหนดแล้วเสร็จ",rows.filter(r=>r.st.main!==1&&daysTo(r.s.due)<0).length,"แห่ง"],
+    ["มีปัญหา/ติดขัด",rows.filter(r=>Object.values(r.st).some(v=>v===-1)).length,"แห่ง"],
+    ["กำลังผลิตที่ติดตั้งแล้ว",rows.filter(r=>r.st.main===1).reduce((a,r)=>a+r.s.kwp,0),"kWp"],
+    ["มูลค่างานที่ติดตั้งแล้ว",Math.round(rows.filter(r=>r.st.main===1).reduce((a,r)=>a+r.s.budget,0)),"บาท"],
+    ["รายงานจากหน้างานทั้งหมด",live().length,"รายการ"],
+    ["รายการที่ถูกลบ",state.reports.length-live().length,"รายการ"],
+    ["ติดตั้งแผงแล้วเสร็จแต่ยังไม่มีรูปถ่ายยืนยัน",noProofCount(),"แห่ง"],[],
+    ["ความคืบหน้าตามขั้นตอน","แล้วเสร็จ (แห่ง)","คิดเป็น %"],
+    ...STAGES.map(g=>{const d=rows.filter(r=>r.st[g.k]===1).length;return [g.n,d,+(d/36*100).toFixed(1)];})
+  ];
+  const siteSheet=[["ลำดับ","การไฟฟ้า / สถานที่","จังหวัด","เที่ยวรถ","ผู้รับผิดชอบ","วันที่รับของ","ต้องเสร็จภายใน","เหลือ (วัน)",
+    ...STAGES.map(g=>g.n),"kWp","แผง","WBS","วงเงิน (บาท)"],
+    ...rows.map(({s,st})=>{const ev=evidenceOf(s);
+      return [s.seq,s.name,s.prov,"เที่ยวที่ "+s.trip,s.owner,fdate(s.recv),fdate(s.due),daysTo(s.due),
+      ...STAGES.map(g=>lvlPill(st[g.k])[1]+(needProof(g.k)&&st[g.k]===1&&!ev[g.k]?" (ไม่มีหลักฐาน)":"")),s.kwp,s.pv,s.wbs,s.budget];})];
+  const wb=XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(sum),"สรุปผู้บริหาร");
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet(siteSheet),"รายแห่ง 36");
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet([REP_HEAD,...repRows()]),"บันทึกการแจ้ง");
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet([AUD_HEAD,...audRows()]),"บันทึกการลบ");
+  const buf=XLSX.write(wb,{bookType:"xlsx",type:"array"});
+  saveFile("รายงานสรุป-Solar-กฟน1.xlsx",new Blob([buf]));
+}
+
+/* =======================================================================  SCHEDULE SHEET (A4 แนวนอน)  */
+const D=iso=>new Date(iso+"T00:00:00");
+function renderSchedSheet(){
+  const rows=SITES.map(s=>({s,st:siteStatus(s),left:daysTo(s.due)}));
+  const ax0=new Date(Math.min(...SITES.map(s=>+D(s.recv))))-86400000;
+  const ax1=new Date(Math.max(...SITES.map(s=>+D(s.due))))+2*86400000;
+  const span=(ax1-ax0)/86400000;
+  const pc=d=>((+d-ax0)/86400000)/span*100;
+  const cls=r=> r.st.main===1?"ok" : r.left<0?"crit" : r.left<=7?"warn" : "plan";
+  const stx=r=> r.st.main===1?"ติดตั้งแล้วเสร็จ" : r.left<0?`เลยกำหนด ${-r.left} วัน`
+                : r.left===0?"ครบกำหนดวันนี้" : `เหลือ ${r.left} วัน`;
+  const ticks=[]; for(let t=ax0;t<=ax1;t+=7*86400000) ticks.push(new Date(t));
+  const axis=ticks.map(t=>`<span style="left:${pc(t).toFixed(3)}%">${t.getDate()} ${THM[t.getMonth()]}</span>
+    <i style="left:${pc(t).toFixed(3)}%"></i>`).join("");
+  const nowPc=pc(today());
+
+  let prev=null;
+  const body=rows.map(r=>{
+    const band=(prev!==null&&r.s.due!==prev)?" band":""; prev=r.s.due;
+    const ev=evidenceOf(r.s);
+    const mk=k=>r.st[k]!==1?"–":(!needProof(k)||ev[k]?"✓":'<span title="ยังไม่มีรูปถ่ายยืนยันในระบบ">✓*</span>');
+    const L=pc(D(r.s.recv)), W=pc(D(r.s.due))-L, c=cls(r);
+    return `<tr class="${band.trim()}">
+      <td class="n">${r.s.seq}</td>
+      <td class="nm">${esc(r.s.name)}</td>
+      <td>${esc(r.s.prov)}</td>
+      <td class="n">${r.s.trip}</td>
+      <td class="n">${fdate(r.s.recv).replace(" 2026","")}</td>
+      <td class="n b">${fdate(r.s.due).replace(" 2026","")}</td>
+      <td class="n">${r.s.kwp}</td>
+      <td class="gcell"><div class="track">
+        <div class="gbar ${c}" style="left:${L.toFixed(3)}%;width:${Math.max(W,0.5).toFixed(3)}%"></div>
+        <div class="gd r" style="left:${L.toFixed(3)}%"></div>
+        <div class="gd d ${c}" style="left:${pc(D(r.s.due)).toFixed(3)}%"></div>
+        <div class="gnow" style="left:${nowPc.toFixed(3)}%"></div></div></td>
+      <td class="stx ${c}">${stx(r)}</td>
+      <td class="ac">${mk("accy")}</td>
+      <td class="ac">${mk("main")}</td>
+    </tr>`;}).join("");
+
+  const doneN=rows.filter(r=>r.st.main===1).length;
+  const over=rows.filter(r=>r.st.main!==1&&r.left<0);
+  const soon=rows.filter(r=>r.st.main!==1&&r.left>=0&&r.left<=7);
+
+  const groups={}; rows.forEach(r=>(groups[r.s.due]=groups[r.s.due]||[]).push(r));
+  const grp=Object.keys(groups).sort().map(due=>{
+    const g=groups[due], left=daysTo(due), dn=g.filter(r=>r.st.main===1).length;
+    const c=left<0?"crit":left<=7?"warn":"plan";
+    const lt=left<0?`เลยกำหนด ${-left} วัน`:left===0?"ครบกำหนดวันนี้":`เหลือ ${left} วัน`;
+    return `<tr><td class="n">${fdate(g[0].s.recv)}</td><td class="n b">${fdate(due)}</td>
+      <td class="n">${g.length}</td><td class="n">${dn}</td><td class="n">${g.length-dn}</td>
+      <td class="stx ${c}">${lt}</td>
+      <td class="lst">${esc(g.map(r=>r.s.name).join(" · "))}</td></tr>`;}).join("");
+  const nameList=a=>a.length?esc(a.map(r=>`${r.s.name} (${r.s.prov}, ครบกำหนด ${fdate(r.s.due).replace(" 2026","")})`).join(" · ")):"— ไม่มี —";
+
+  return `<div class="sheet"><div class="inner">
+    <div class="shead">
+      <div><h2>สรุประยะเวลากำหนดการติดตั้ง Solar Rooftop ระยะที่ 4 — กฟน.1 (36 แห่ง)</h2>
+        <div class="sub">สัญญาเลขที่ บ.45/2569 ลงวันที่ 9 ก.ค. 2026 · เกณฑ์: ติดตั้งให้แล้วเสร็จภายใน 1 เดือนนับจากวันที่รับของ · ข้อมูล ณ ${fdt(Date.now())}</div></div>
+      <div class="kpis">
+        <div class="kpi g"><div class="k">ติดตั้งแล้วเสร็จ</div><div class="v">${doneN}/36</div></div>
+        <div class="kpi c"><div class="k">เลยกำหนด</div><div class="v">${over.length}</div></div>
+        <div class="kpi w"><div class="k">ครบกำหนด ≤ 7 วัน</div><div class="v">${soon.length}</div></div>
+        <div class="kpi"><div class="k">เที่ยวรถขนส่ง</div><div class="v">12</div></div>
+        <div class="kpi"><div class="k">รวมกำลังผลิต</div><div class="v">344</div></div>
+      </div>
+    </div>
+    <table>
+      <colgroup><col style="width:3%"><col style="width:17%"><col style="width:7.5%"><col style="width:4.5%">
+        <col style="width:6.5%"><col style="width:6.5%"><col style="width:4.5%"><col>
+        <col style="width:9.5%"><col style="width:5%"><col style="width:5%"></colgroup>
+      <thead>
+        <tr><th class="n">ลำดับ</th><th>การไฟฟ้า / สถานที่ติดตั้ง</th><th>จังหวัด</th><th class="n">เที่ยว</th>
+          <th class="n">รับของ</th><th class="n">ครบกำหนด</th><th class="n">kWp</th>
+          <th>ช่วงเวลาดำเนินการ</th><th class="n">สถานะเวลา</th>
+          <th class="n">อุปกรณ์<br>ประกอบ</th><th class="n">ติดตั้ง<br>แผง</th></tr>
+        <tr><th colspan="7" style="background:#F4F5F7;border-right:0;padding:0"></th>
+          <th style="padding:0;border-right:0"><div class="axcell">${axis}</div></th>
+          <th colspan="3" style="background:#F4F5F7;border-right:0;padding:0"></th></tr>
+      </thead>
+      <tbody>${body}</tbody>
+    </table>
+    <div class="slegend">
+      <span><i style="background:#2D5FA8"></i>ช่วงเวลาที่มีสิทธิ์ดำเนินการ (รับของ → ครบกำหนด)</span>
+      <span><i style="background:#17794B"></i>ติดตั้งแล้วเสร็จ</span>
+      <span><i style="background:#B42318"></i>เลยกำหนดแล้ว</span>
+      <span><i style="background:#B9761B"></i>ครบกำหนดภายใน 7 วัน</span>
+      <span><i style="background:#14181B;width:5px;height:11px"></i>วันรับของ</span>
+      <span><i style="background:#fff;border:2px solid #14181B;width:5px;height:11px"></i>วันครบกำหนด</span>
+      <span><i style="border-left:1px dashed #B42318;width:0;height:11px"></i>วันนี้</span>
+    </div>
+    <div class="sfoot"><span>หน้า 1/2 — ไทม์ไลน์รายแห่ง${noProofCount()?` · ✓* = ติดตั้งแผงแล้วเสร็จแต่ยังไม่มีรูปถ่ายยืนยันในระบบ (${noProofCount()} แห่ง)`:""}</span>
+      <span>แผนกส่งเสริมพลังงานทดแทนและอนุรักษ์พลังงาน กองวิศวกรรมและวางแผน กฟน.1</span></div>
+
+    <div class="pagebreak" style="margin-top:26px">
+      <div class="shead"><div><h2>กำหนดการติดตั้งจัดกลุ่มตามวันครบกำหนด</h2>
+        <div class="sub">จัดกลุ่มตามวันที่รับของ · ใช้เป็นแผนจัดคิวทีมช่างและกำหนดวันตรวจรับ</div></div></div>
+      <table>
+        <colgroup><col style="width:10%"><col style="width:10%"><col style="width:5.5%"><col style="width:5.5%">
+          <col style="width:5.5%"><col style="width:11%"><col></colgroup>
+        <thead><tr><th class="n">วันที่รับของ</th><th class="n">ต้องเสร็จภายใน</th><th class="n">จำนวน<br>(แห่ง)</th>
+          <th class="n">เสร็จ<br>แล้ว</th><th class="n">คง<br>เหลือ</th><th class="n">สถานะเวลา</th>
+          <th>รายชื่อการไฟฟ้า / สถานที่ในกลุ่ม</th></tr></thead>
+        <tbody>${grp}</tbody>
+      </table>
+      <h2 style="font-size:14px;margin:12px 0 4px">ประเด็นที่ต้องเร่งดำเนินการ</h2>
+      <div style="font-size:11.5px;color:#3D474F;display:grid;gap:4px">
+        <div><b style="color:#B42318">เลยกำหนดแล้วเสร็จ ${over.length} แห่ง</b> ${nameList(over)}</div>
+        <div><b style="color:#B9761B">ครบกำหนดภายใน 7 วัน ${soon.length} แห่ง</b> ${nameList(soon)}</div>
+        <div><b style="color:#14181B">สรุป</b> ระยะเวลาดำเนินการจริงต่อจุด 1 เดือนนับจากวันรับของ
+          ของทยอยถึงระหว่าง ${fdate(SITES[0].recv)} – 3 ก.ย. 2026 กำหนดแล้วเสร็จทั้งหมดสิ้นสุด 3 ต.ค. 2026
+          ปัจจุบันติดตั้งแผงแล้วเสร็จ ${doneN} แห่ง คงเหลือ ${36-doneN} แห่ง</div>
+      </div>
+      <div class="signrow">
+        <div><div class="ln"></div>ผู้จัดทำ<div style="font-size:10.5px;color:#5A6570">แผนกส่งเสริมพลังงานทดแทนและอนุรักษ์พลังงาน</div></div>
+        <div><div class="ln"></div>ผู้ตรวจสอบ<div style="font-size:10.5px;color:#5A6570">หัวหน้ากองวิศวกรรมและวางแผน</div></div>
+        <div><div class="ln"></div>ผู้เห็นชอบ<div style="font-size:10.5px;color:#5A6570">ผู้อำนวยการ กฟน.1</div></div>
+      </div>
+      <div class="sfoot" style="margin-top:12px"><span>หน้า 2/2 — กำหนดการรายกลุ่ม</span><span>ข้อมูล ณ ${fdt(Date.now())}</span></div>
+    </div>
+  </div></div>`;
+}
+
+/* =======================================================================  EXEC REPORT  */
+function renderExec(){
+  const rows=SITES.map(s=>({s,st:siteStatus(s)}));
+  const doneMain=rows.filter(r=>r.st.main===1).length;
+  const overdue=rows.filter(r=>r.st.main!==1&&daysTo(r.s.due)<0);
+  const soon=rows.filter(r=>r.st.main!==1&&daysTo(r.s.due)>=0&&daysTo(r.s.due)<=7);
+  const issues=rows.filter(r=>Object.values(r.st).some(v=>v===-1));
+  const kwDone=rows.filter(r=>r.st.main===1).reduce((a,r)=>a+r.s.kwp,0);
+  const bDone=rows.filter(r=>r.st.main===1).reduce((a,r)=>a+r.s.budget,0);
+  const bTot=SITES.reduce((a,s)=>a+s.budget,0);
+  const lst=arr=>arr.length?arr.map(r=>`${r.s.name} (${r.s.prov}, ครบกำหนด ${fdate(r.s.due)})`).join(" · "):"— ไม่มี —";
+
+  const tab=state.execTab||"summary";
+  $("#v-exec").innerHTML=`
+    <div class="chips no-print">
+      <button class="chip" data-etab="summary" aria-pressed="${tab==="summary"}">รายงานสรุปผู้บริหาร</button>
+      <button class="chip" data-etab="sched" aria-pressed="${tab==="sched"}">กำหนดการติดตั้ง (A4 แนวนอน)</button>
+      <button class="btn primary" id="printbtn" type="button" style="margin-left:auto">พิมพ์ / บันทึกเป็น PDF</button>
+      <button class="btn" id="xlsxbtn" type="button">ส่งออก Excel (4 ชีท)</button>
+      <button class="btn" id="csvbtn2" type="button">ส่งออก CSV</button>
+    </div>
+    ${tab==="sched"?renderSchedSheet():`
+    <div class="card pad rep">
+      <div class="eyebrow">รายงานสรุปสำหรับผู้บริหาร</div>
+      <h2 style="font-size:20px;margin-top:4px">การติดตั้ง Solar Rooftop ระยะที่ 4 — กฟน.1 (36 แห่ง)</h2>
+      <div style="color:var(--ink-3);font-size:12.5px">สัญญาเลขที่ บ.45/2569 ลงวันที่ 9 ก.ค. 2026 · ข้อมูล ณ ${fdt(Date.now())} น.</div>
+
+      <h2>1. ความคืบหน้าโดยรวม</h2>
+      <div class="kv">
+        <div><div class="k">ติดตั้งหลักแล้วเสร็จ</div><b class="num">${doneMain} / 36 แห่ง (${(doneMain/36*100).toFixed(1)}%)</b></div>
+        <div><div class="k">กำลังผลิตที่ติดตั้งแล้ว</div><b class="num">${kwDone} / 344 kWp</b></div>
+        <div><div class="k">มูลค่างานที่ติดตั้งแล้ว</div><b class="num">${nf(bDone)} / ${nf(bTot)} บาท</b></div>
+        <div><div class="k">รายงานจากหน้างาน</div><b class="num">${live().length} รายการ${state.reports.length>live().length?` (ลบ ${state.reports.length-live().length})`:""}</b></div>
+        <div><div class="k">ติดตั้งแผงแล้วแต่ยังไม่มีหลักฐาน</div><b class="num" style="color:${noProofCount()?"var(--warn)":"var(--ok)"}">${noProofCount()} แห่ง</b></div>
+      </div>
+      <div class="bar" style="height:10px;margin-top:14px"><i style="width:${doneMain/36*100}%"></i></div>
+
+      <h2>2. ความคืบหน้าแยกตามขั้นตอน</h2>
+      <div class="tablewrap"><table><thead><tr><th>ขั้นตอนงาน</th><th>แล้วเสร็จ</th><th>กำลังดำเนินการ</th><th>มีปัญหา</th><th>ยังไม่ดำเนินการ</th></tr></thead>
+        <tbody>${STAGES.map(g=>{const c=v=>rows.filter(r=>r.st[g.k]===v).length;
+          return `<tr><td>${g.n}</td><td class="num">${c(1)}</td><td class="num">${c(0.5)}</td><td class="num">${c(-1)}</td><td class="num">${c(0)}</td></tr>`;}).join("")}
+        </tbody></table></div>
+
+      <h2>3. ประเด็นที่ต้องตัดสินใจ</h2>
+      <div style="font-size:13px;display:grid;gap:9px">
+        <div><b style="color:var(--crit)">เลยกำหนดแล้วเสร็จ ${overdue.length} แห่ง</b><div style="color:var(--ink-2)">${esc(lst(overdue))}</div></div>
+        <div><b style="color:var(--warn)">ครบกำหนดภายใน 7 วัน ${soon.length} แห่ง</b><div style="color:var(--ink-2)">${esc(lst(soon))}</div></div>
+        <div><b>แจ้งปัญหาค้างอยู่ ${issues.length} แห่ง</b><div style="color:var(--ink-2)">${esc(lst(issues))}</div></div>
+      </div>
+
+      <h2>4. สถานะรายแห่ง</h2>
+      <div class="tablewrap"><table><thead><tr><th>#</th><th>สถานที่</th><th>จังหวัด</th><th>ครบกำหนด</th>
+        ${STAGES.map(g=>`<th>${g.n.split(" ")[0]}</th>`).join("")}<th>kWp</th></tr></thead>
+        <tbody>${rows.map(({s,st})=>`<tr><td class="num">${s.seq}</td><td>${esc(s.name)}</td><td>${esc(s.prov)}</td>
+          <td class="num">${fdate(s.due)}</td>
+          ${STAGES.map(g=>`<td>${st[g.k]===1?"✔":st[g.k]===0.5?"◐":st[g.k]===-1?"✕":"–"}</td>`).join("")}
+          <td class="num">${s.kwp}</td></tr>`).join("")}</tbody></table></div>
+      <div class="hint">✔ แล้วเสร็จ · ◐ กำลังดำเนินการ · ✕ มีปัญหา · – ยังไม่ดำเนินการ</div>
+
+      <h2>5. บันทึกการลบรายการ (ตรวจสอบย้อนหลัง)</h2>
+      ${state.audit.length?`<div class="tablewrap"><table><thead><tr><th>วันเวลา</th><th>การกระทำ</th><th>ผู้ทำรายการ</th><th>รายการ</th><th>เหตุผล</th></tr></thead>
+        <tbody>${[...state.audit].sort((a,b)=>b.ts-a.ts).slice(0,30).map(a=>`<tr><td class="num">${fdt(a.ts)}</td>
+          <td>${a.action==="delete"?"ลบ":"กู้คืน"}</td><td>${esc(a.byName)} <span class="num">(${esc(a.byId)})</span></td>
+          <td>${esc(a.siteName)} · ${esc(stageName(a.stage))}</td><td>${esc(a.reason||"")}</td></tr>`).join("")}</tbody></table></div>`
+        :`<div style="font-size:13px;color:var(--ink-3)">ไม่มีการลบหรือแก้ไขรายการในระบบ</div>`}
+    </div>`}
+    <p class="hint no-print" style="margin-top:10px">ตั้งค่าเครื่องพิมพ์: Layout = แนวนอน (Landscape) · Margins = Default · เปิด “พิมพ์สีพื้นหลัง/กราฟิก” เพื่อให้แท่งเวลาและหัวตารางออกสี</p>`;
+  $("#printbtn").onclick=()=>{try{window.print();}catch(e){toast("พิมพ์ไม่ได้ในมุมมองนี้ — เปิดหน้านี้ในแท็บใหม่แล้วสั่งพิมพ์");}};
+  $("#xlsxbtn").onclick=exportXLSX;
+  $("#csvbtn2").onclick=exportCSV;
+  $$("#v-exec [data-etab]").forEach(b=>b.onclick=()=>{state.execTab=b.dataset.etab;renderExec();});
+}
+
+/* =======================================================================  ANALYTICS  */
+function renderAnalytics(){
+  const rows=SITES.map(s=>({s,st:siteStatus(s)}));
+  $("#v-analytics").innerHTML=`
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+      <div class="chartcard"><h3>ความคืบหน้าแต่ละขั้นตอน</h3>
+        <div class="sub">จำนวนแห่ง (เต็ม 36) ที่ผ่านแต่ละขั้นตอนแล้ว</div>${chartStages(rows)}</div>
+      <div class="chartcard"><h3>ติดตั้งหลักแล้วเสร็จ แยกตามจังหวัด</h3>
+        <div class="sub">แท่งเข้ม = ติดตั้งแล้ว · แท่งจาง = ยังเหลือ</div>${chartProv(rows)}</div>
+      <div class="chartcard" style="grid-column:1/-1"><h3>กำหนดแล้วเสร็จเทียบกับวันนี้</h3>
+        <div class="sub">จำนวนแห่งที่ครบกำหนดในแต่ละวัน · เส้นประคือวันนี้</div>${chartDue(rows)}</div>
+      <div class="chartcard"><h3>มูลค่างานที่ติดตั้งแล้ว</h3>
+        <div class="sub">งบประมาณตามสัญญา (ไม่รวม VAT) รวม ${nf(SITES.reduce((a,s)=>a+s.budget,0))} บาท</div>${chartBudget(rows)}</div>
+      <div class="chartcard"><h3>การแจ้งสถานะรายวัน</h3>
+        <div class="sub">จำนวนรายงานจากหน้างาน 14 วันล่าสุด</div>${chartDaily()}</div>
+    </div>`;
+  wireTips();
+}
+const SW=560;
+function chartStages(rows){
+  const H=STAGES.length*42+14, bw=26;
+  let out=`<svg class="chart" viewBox="0 0 ${SW} ${H}" role="img" aria-label="ความคืบหน้าแต่ละขั้นตอน">`;
+  const x0=178, w=SW-x0-46;
+  [0,.25,.5,.75,1].forEach(t=>{out+=`<line class="gridline" x1="${x0+w*t}" y1="6" x2="${x0+w*t}" y2="${H-24}"/>`;});
+  STAGES.forEach((g,i)=>{
+    const y=12+i*42, d=rows.filter(r=>r.st[g.k]===1).length, p=rows.filter(r=>r.st[g.k]===0.5).length;
+    const dw=w*d/36, pw=w*p/36;
+    out+=`<text class="axis" x="${x0-10}" y="${y+bw/2+4}" text-anchor="end">${g.n.length>20?g.n.slice(0,19)+"…":g.n}</text>`;
+    out+=`<rect x="${x0}" y="${y}" width="${w}" height="${bw}" rx="4" fill="var(--line-2)"/>`;
+    if(pw>2)out+=`<rect x="${x0+dw+2}" y="${y}" width="${Math.max(0,pw-2)}" height="${bw}" rx="4" fill="${g.c}" opacity=".35"
+      data-tip="${g.n}: กำลังดำเนินการ ${p} แห่ง"/>`;
+    if(dw>0)out+=`<rect x="${x0}" y="${y}" width="${dw}" height="${bw}" rx="4" fill="${g.c}" data-tip="${g.n}: แล้วเสร็จ ${d} จาก 36 แห่ง"/>`;
+    out+=`<text class="vlab" x="${x0+Math.max(dw,0)+8}" y="${y+bw/2+4}">${d}</text>`;
+  });
+  [0,9,18,27,36].forEach(v=>{out+=`<text class="axis" x="${x0+w*v/36}" y="${H-8}" text-anchor="middle">${v}</text>`;});
+  return out+`</svg><div class="legend">${STAGES.map(g=>`<span><i style="background:${g.c}"></i>${g.n}</span>`).join("")}</div>`;
+}
+function chartProv(rows){
+  const provs=[...new Set(SITES.map(s=>s.prov))]
+    .map(p=>({p,tot:rows.filter(r=>r.s.prov===p).length,done:rows.filter(r=>r.s.prov===p&&r.st.main===1).length}))
+    .sort((a,b)=>b.tot-a.tot);
+  const H=provs.length*36+16, x0=96, w=SW-x0-46, mx=Math.max(...provs.map(p=>p.tot));
+  let out=`<svg class="chart" viewBox="0 0 ${SW} ${H}" role="img" aria-label="ติดตั้งแล้วเสร็จแยกตามจังหวัด">`;
+  provs.forEach((p,i)=>{
+    const y=10+i*36, bw=24, tw=w*p.tot/mx, dw=w*p.done/mx;
+    out+=`<text class="axis" x="${x0-10}" y="${y+bw/2+4}" text-anchor="end">${p.p}</text>`;
+    out+=`<rect x="${x0}" y="${y}" width="${tw}" height="${bw}" rx="4" fill="var(--c1)" opacity=".22" data-tip="${p.p}: ตามแผน ${p.tot} แห่ง"/>`;
+    if(dw>0)out+=`<rect x="${x0}" y="${y}" width="${dw}" height="${bw}" rx="4" fill="var(--c1)" data-tip="${p.p}: ติดตั้งแล้ว ${p.done} จาก ${p.tot} แห่ง"/>`;
+    out+=`<text class="vlab" x="${x0+tw+8}" y="${y+bw/2+4}">${p.done}/${p.tot}</text>`;
+  });
+  return out+`</svg><div class="legend"><span><i style="background:var(--c1)"></i>ติดตั้งหลักแล้วเสร็จ</span>
+    <span><i style="background:var(--c1);opacity:.22"></i>ตามแผนทั้งหมด</span></div>`;
+}
+function chartDue(rows){
+  const map={};
+  rows.forEach(r=>{(map[r.s.due]=map[r.s.due]||{tot:0,done:0}).tot++; if(r.st.main===1)map[r.s.due].done++;});
+  const ks=Object.keys(map).sort(), H=200, x0=34, y0=H-40, w=SW-x0-16, mx=Math.max(...ks.map(k=>map[k].tot));
+  const bw=Math.min(46,w/ks.length-12), step=w/ks.length;
+  let out=`<svg class="chart" viewBox="0 0 ${SW} ${H}" role="img" aria-label="จำนวนแห่งตามวันครบกำหนด">`;
+  for(let v=0;v<=mx;v+=Math.ceil(mx/4)){const y=y0-(y0-16)*v/mx;
+    out+=`<line class="gridline" x1="${x0}" y1="${y}" x2="${SW-12}" y2="${y}"/><text class="axis" x="${x0-8}" y="${y+4}" text-anchor="end">${v}</text>`;}
+  ks.forEach((k,i)=>{
+    const c=map[k], x=x0+step*i+(step-bw)/2;
+    const th=(y0-16)*c.tot/mx, dh=(y0-16)*c.done/mx, past=daysTo(k)<0;
+    out+=`<rect x="${x}" y="${y0-th}" width="${bw}" height="${th}" rx="4" fill="${past?"var(--crit)":"var(--c2)"}" opacity=".22"
+      data-tip="${fdate(k)}: ครบกำหนด ${c.tot} แห่ง"/>`;
+    if(dh>0)out+=`<rect x="${x}" y="${y0-dh}" width="${bw}" height="${dh}" rx="4" fill="var(--ok)" data-tip="${fdate(k)}: ติดตั้งแล้ว ${c.done} แห่ง"/>`;
+    out+=`<text class="vlab" x="${x+bw/2}" y="${y0-th-7}" text-anchor="middle">${c.tot}</text>`;
+    out+=`<text class="axis" x="${x+bw/2}" y="${y0+15}" text-anchor="middle">${new Date(k+"T00:00:00").getDate()} ${THM[new Date(k+"T00:00:00").getMonth()]}</text>`;
+  });
+  const t=today(); let tx=null;
+  ks.forEach((k,i)=>{ if(new Date(k+"T00:00:00")<=t) tx=x0+step*(i+1); });
+  if(tx!==null&&tx<SW-14) out+=`<line x1="${tx}" y1="10" x2="${tx}" y2="${y0}" stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text class="axis" x="${tx+5}" y="18">วันนี้</text>`;
+  out+=`<line x1="${x0}" y1="${y0}" x2="${SW-12}" y2="${y0}" stroke="var(--line)" stroke-width="1"/>`;
+  return out+`</svg><div class="legend"><span><i style="background:var(--ok)"></i>ติดตั้งแล้ว</span>
+    <span><i style="background:var(--c2);opacity:.3"></i>ครบกำหนดข้างหน้า</span>
+    <span><i style="background:var(--crit);opacity:.3"></i>เลยกำหนดแล้ว</span></div>`;
+}
+function chartBudget(rows){
+  const tot=SITES.reduce((a,s)=>a+s.budget,0);
+  const done=rows.filter(r=>r.st.main===1).reduce((a,r)=>a+r.s.budget,0);
+  const pct=done/tot;
+  return `<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px">
+      <div class="disp num" style="font-size:30px;font-weight:600;letter-spacing:-.5px">${nf(done)}</div>
+      <div style="color:var(--ink-3);font-size:13px">บาท · ${(pct*100).toFixed(1)}% ของวงเงิน</div></div>
+    <svg class="chart" viewBox="0 0 ${SW} 46" role="img" aria-label="สัดส่วนมูลค่างานที่ติดตั้งแล้ว">
+      <rect x="0" y="6" width="${SW}" height="26" rx="6" fill="var(--line-2)"/>
+      <rect x="0" y="6" width="${Math.max(2,SW*pct)}" height="26" rx="6" fill="var(--c3)" data-tip="ติดตั้งแล้ว ${nf(done)} บาท"/>
+      <text class="axis" x="0" y="44">0</text><text class="axis" x="${SW}" y="44" text-anchor="end">${nf(tot)} บาท</text>
+    </svg>
+    <div class="legend"><span><i style="background:var(--c3)"></i>มูลค่าที่ติดตั้งแล้ว ${nf(done)} บาท</span>
+      <span><i style="background:var(--line-2)"></i>คงเหลือ ${nf(tot-done)} บาท</span></div>`;
+}
+function chartDaily(){
+  const days=[]; const t=today();
+  for(let i=13;i>=0;i--){const d=new Date(t);d.setDate(d.getDate()-i);days.push(d);}
+  const cnt=days.map(d=>live().filter(r=>{const x=new Date(r.ts);return x.toDateString()===d.toDateString();}).length);
+  const mx=Math.max(1,...cnt), H=170, x0=28, y0=H-34, w=SW-x0-14, step=w/days.length, bw=Math.min(26,step-8);
+  let out=`<svg class="chart" viewBox="0 0 ${SW} ${H}" role="img" aria-label="จำนวนรายงานรายวัน">`;
+  [0,mx].forEach(v=>{const y=y0-(y0-14)*v/mx;
+    out+=`<line class="gridline" x1="${x0}" y1="${y}" x2="${SW-8}" y2="${y}"/><text class="axis" x="${x0-6}" y="${y+4}" text-anchor="end">${v}</text>`;});
+  days.forEach((d,i)=>{
+    const h=(y0-14)*cnt[i]/mx, x=x0+step*i+(step-bw)/2;
+    out+=`<rect x="${x}" y="${y0-Math.max(h,1.5)}" width="${bw}" height="${Math.max(h,1.5)}" rx="4"
+      fill="${cnt[i]?"var(--c4)":"var(--line-2)"}" data-tip="${d.getDate()} ${THM[d.getMonth()]}: ${cnt[i]} รายงาน"/>`;
+    if(i%3===0||i===days.length-1)out+=`<text class="axis" x="${x+bw/2}" y="${y0+15}" text-anchor="middle">${d.getDate()}</text>`;
+  });
+  out+=`<line x1="${x0}" y1="${y0}" x2="${SW-8}" y2="${y0}" stroke="var(--line)" stroke-width="1"/>`;
+  return out+`</svg><div class="legend"><span><i style="background:var(--c4)"></i>รายงานจากหน้างาน · รวม ${live().length} รายการ</span></div>`;
+}
+function wireTips(){
+  let tip=$("#tip");
+  $$("#v-analytics [data-tip]").forEach(el=>{
+    el.style.cursor="default";
+    el.addEventListener("pointerenter",e=>{
+      if(!tip){tip=document.createElement("div");tip.id="tip";document.body.appendChild(tip);}
+      tip.textContent=el.dataset.tip; tip.hidden=false;
+      tip.style.left=Math.min(window.innerWidth-240,e.clientX+12)+"px"; tip.style.top=(e.clientY-8)+"px";
+    });
+    el.addEventListener("pointermove",e=>{if(tip){tip.style.left=Math.min(window.innerWidth-240,e.clientX+12)+"px";tip.style.top=(e.clientY-8)+"px";}});
+    el.addEventListener("pointerleave",()=>{if(tip)tip.hidden=true;});
+  });
+}
+
+/* =======================================================================  BOOT  */
+function renderAuthbar(){
+  const el=$("#authbar"); if(!el)return;
+  if(state.online!==false){el.hidden=true;return;}
+  el.hidden=false;
+  el.innerHTML=`<b>⚠️ ติดต่อเซิร์ฟเวอร์ไม่ได้</b>
+    ข้อมูลที่แสดงอาจไม่เป็นปัจจุบัน และยังส่งรายงานใหม่ไม่ได้
+    <ol><li>ตรวจสอบสัญญาณอินเทอร์เน็ต / สัญญาณมือถือ</li>
+    <li>กดปุ่ม <b>รีเฟรช</b> ที่มุมขวาบน</li>
+    <li>ถ้ายังไม่ได้ แจ้งผู้ดูแล (แผนกส่งเสริมพลังงานทดแทนฯ กฟน.1)</li></ol>`;
+}
+function render(){
+  renderAuthbar();
+  if(state.view==="overview")renderOverview();
+  if(state.view==="report")renderReport();
+  if(state.view==="db")renderDB();
+  if(state.view==="analytics")renderAnalytics();
+  if(state.view==="exec")renderExec();
+  if(state.view==="site")renderSite();
+  const n=$("#navcount"); if(n)n.textContent=live().length;
+}
+buildNav(); render();
+
+$("#collapse").onclick=()=>{const s=$("#shell");s.classList.toggle("collapsed");
+  $("#collapse").textContent=s.classList.contains("collapsed")?"ขยาย":"ย่อแถบเมนู";};
+$("#menubtn").onclick=()=>$("#shell").classList.toggle("navopen");
+$("#scrim").onclick=()=>$("#shell").classList.remove("navopen");
+$("#gotoreport").onclick=()=>go("report");
+$("#refreshbtn").onclick=()=>refresh();
+$("#themebtn").onclick=()=>{
+  const r=document.documentElement;
+  const cur=r.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  r.setAttribute("data-theme",cur==="dark"?"light":"dark");
+};
+
+/* ---------- ชั้นเชื่อมต่อ Google Apps Script ---------- */
+/* ====================================================================
+   ★ แก้บรรทัดล่างนี้บรรทัดเดียว: วาง URL ที่ลงท้ายด้วย /exec ของ Apps Script
+   ==================================================================== */
+const API_URL = "https://script.google.com/macros/s/AKfycbziF_jfB4zqU8jojsTVwu_dQvlvDxhxJA0bwB7C92-1yFgElrFyDy6upNDaExLWWb-1/exec";
+
+const hasGAS=()=>typeof google!=="undefined"&&google.script&&google.script.run;
+function call(action,payload){
+  if(hasGAS()){
+    const fn={submit:"apiSubmit",delete:"apiDelete",list:"apiList"}[action];
+    return new Promise((res,rej)=>{
+      const r=google.script.run.withSuccessHandler(res).withFailureHandler(e=>rej(new Error(e&&e.message||"เรียกเซิร์ฟเวอร์ไม่สำเร็จ")));
+      action==="list"?r[fn]():r[fn](payload);
+    });
+  }
+  if(!API_URL) return Promise.reject(new Error("ยังไม่ได้ตั้งค่า API_URL"));
+  return fetch(API_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},
+    body:JSON.stringify({action,payload})}).then(r=>r.json());
+}
+async function refresh(quiet){
+  const st=$("#dbstate");
+  if(!quiet&&st)st.textContent="กำลังโหลดข้อมูล…";
+  try{
+    const r=await call("list");
+    if(!r||!r.ok) throw new Error(r&&r.error||"อ่านข้อมูลไม่สำเร็จ");
+    state.reports=(r.reports||[]).map(x=>({...x,ts:Number(x.ts)||0,siteSeq:Number(x.siteSeq),
+      lat:Number(x.lat),lng:Number(x.lng),delTs:Number(x.delTs)||0}));
+    state.audit=(r.audit||[]).map(x=>({...x,ts:Number(x.ts)||0,origTs:Number(x.origTs)||0}));
+    state.online=true;
+    if(st)st.textContent="เชื่อมต่อแล้ว · อัปเดต "+new Date().toLocaleTimeString("th-TH",{hour:"2-digit",minute:"2-digit"});
+  }catch(e){
+    state.online=false;
+    if(st)st.textContent="เชื่อมต่อไม่ได้ — "+(e.message||"");
+  }
+  render();
+}
+if(!API_URL||API_URL.indexOf("script.google.com")<0){
+  window.__BOOTLOG.push("ยังไม่ได้ตั้งค่า API_URL — เปิดไฟล์ index.html แล้ววาง URL /exec ของ Apps Script");
+  __showBoot();
+}else{
+  refresh();
+  setInterval(()=>refresh(true),60000);
+}
+window.__APP_OK=true;
+</script>
+<script>
+(function(){
+  if(window.__APP_OK) return;
+  if(!window.__INLINE_OK){ return; }
+  window.__BOOTLOG.push("สคริปต์หลักไม่ได้ทำงานจนจบ (ดูข้อความด้านบน)");
+  __showBoot();
+})();
+</script>
+</body>
+</html>
