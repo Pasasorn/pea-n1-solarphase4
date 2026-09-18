@@ -515,11 +515,11 @@ function renderOverview(){
     <div class="tile" style="--stripe:var(--c4)"><div class="k">☀️ ติดตั้งแผงแล้วเสร็จ</div>
       <div class="v num">${doneMain}<span style="font-size:15px;color:var(--ink-3)"> / 36</span></div>
       <div class="bar"><i style="width:${doneMain/36*100}%"></i></div>
-      <div class="s num">${(doneMain/36*100).toFixed(0)}% ของแผน</div></div>
+      <div class="s num"><b style="color:${doneMain===36?"var(--ok)":"var(--ink-2)"};font-size:14px">${(doneMain/36*100).toFixed(0)}%</b> ของแผนทั้งหมด</div></div>
     <div class="tile" style="--stripe:var(--c6)"><div class="k">✅ ปิดงานแล้ว</div>
       <div class="v num">${doneClose}<span style="font-size:15px;color:var(--ink-3)"> / 36</span></div>
       <div class="bar"><i style="width:${doneClose/36*100}%;background:var(--c6)"></i></div>
-      <div class="s">ปิดงานจัดซื้อ/งานติดตั้งครบถ้วน</div></div>
+      <div class="s num"><b style="color:${doneClose===36?"var(--ok)":"var(--ink-2)"};font-size:14px">${(doneClose/36*100).toFixed(0)}%</b> ของแผนทั้งหมด</div></div>
     <div class="tile" style="--stripe:var(--crit)"><div class="k">⏰ เลยกำหนดแล้วเสร็จ</div>
       <div class="v num" style="color:${overdue?'var(--crit)':'var(--ok)'}">${overdue}</div>
       <div class="s">แห่งที่ครบกำหนดแล้วแต่ยังไม่ติดตั้ง</div></div>
@@ -533,11 +533,19 @@ function renderOverview(){
 
   const stageBars=STAGES.map(g=>{
     const d=rows.filter(r=>r.st[g.k]===1).length, p=rows.filter(r=>r.st[g.k]===0.5).length, x=rows.filter(r=>r.st[g.k]===-1).length;
-    return `<div style="display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line-2)">
-      <div style="font-size:13.5px">${g.n}</div>
-      <div class="num" style="font-size:13px;color:var(--ink-3)">${d}/36 แล้วเสร็จ${p?` · ${p} กำลังทำ`:""}${x?` · ${x} ปัญหา`:""}</div>
-      <div class="bar" style="grid-column:1/-1;height:9px">
-        <i style="width:${d/36*100}%;background:${g.c}"></i></div></div>`;
+    const pv=Math.round(d/36*100);
+    const pc = pv===100?"var(--ok)" : pv>=50?"var(--c1)" : pv>0?"var(--warn)" : "var(--ink-3)";
+    return `<div style="display:grid;grid-template-columns:1fr auto;gap:5px 12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line-2)">
+      <div style="font-size:15px;font-weight:500">${g.n}${pv===100?' <span class="pill p-ok" style="font-size:11.5px">ครบทุกแห่ง</span>':""}</div>
+      <div style="display:flex;align-items:baseline;gap:9px;white-space:nowrap">
+        <b class="num" style="font-size:21px;font-weight:700;color:${pc};font-family:'Bai Jamjuree',sans-serif">${pv}%</b>
+        <span class="num" style="font-size:13px;color:var(--ink-3)">${d}/36 แล้วเสร็จ${p?` · 🔄 ${p}`:""}${x?` · ⚠️ ${x}`:""}</span>
+      </div>
+      <div class="bar" style="grid-column:1/-1;height:13px;position:relative">
+        <i style="width:${pv}%;background:${g.c}"></i>
+        ${pv>=18?`<span class="num" style="position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;
+          justify-content:flex-start;padding-left:9px;font-size:10.5px;font-weight:700;color:#fff">${pv}%</span>`:""}
+      </div></div>`;
   }).join("");
 
   const urg=urgent.slice(0,8).map(r=>{
