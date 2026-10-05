@@ -35,7 +35,7 @@ window.addEventListener("unhandledrejection",function(e){
   __showBoot();
 });
 window.__INLINE_OK=true;
-window.__BUILD="STATIC-2026-10-05-C";
+window.__BUILD="STATIC-2026-10-05-D";
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -218,6 +218,19 @@ header.top,.wrap{zoom:var(--fs,1)}
 .sec h2{position:relative;padding-left:13px}
 .sec h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:5px;border-radius:99px;background:var(--accent)}
 .card.stripe,.chartcard{border-left:4px solid var(--stripe,var(--line))}
+
+/* ---------- ม่านกันกดซ้ำระหว่างอัปโหลด ---------- */
+#busy{position:fixed;inset:0;z-index:200;background:rgba(10,14,12,.80);backdrop-filter:blur(3px);
+  display:grid;place-items:center;padding:24px;-webkit-tap-highlight-color:transparent}
+#busy .bx{background:var(--surface);border-radius:14px;padding:26px 24px;max-width:340px;width:100%;text-align:center;
+  box-shadow:0 18px 50px rgba(0,0,0,.4)}
+#busy .sp{width:46px;height:46px;margin:0 auto 14px;border-radius:50%;
+  border:4px solid var(--line);border-top-color:var(--accent);animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#busy b{display:block;font-size:17px;margin-bottom:5px}
+#busy p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+#busy .warn{margin-top:12px;font-size:13px;font-weight:700;color:var(--crit)}
+@media (prefers-reduced-motion:reduce){#busy .sp{animation-duration:2.4s}}
 
 /* ---------- extras ---------- */
 .authbar{background:var(--crit-bg);border:1px solid var(--crit);border-left-width:4px;border-radius:var(--r);
@@ -903,31 +916,53 @@ async function submitReport(){
     err.innerHTML='<b>ยังติดต่อเซิร์ฟเวอร์ไม่ได้</b><br>ตรวจสอบสัญญาณอินเทอร์เน็ต แล้วกดส่งอีกครั้ง — ข้อมูลที่กรอกไว้ยังอยู่';
     err.hidden=false; return;
   }
+  if(f.sending) return;                 // กันกดซ้ำในเครื่องเดียวกัน
+  f.sending=true;
+  f.clientId = f.clientId || newCid();   // คีย์กันซ้ำ — ส่งซ้ำด้วยคีย์เดิมจะไม่เกิดแถวใหม่
   btn.disabled=true; err.hidden=true; msg.textContent="กำลังอัปโหลดรูป…";
+  busyOn("กำลังเตรียมรูป…");
   try{
     const site=SITES.find(x=>String(x.seq)===String(f.siteSeq));
     const photos=[]; for(const p of f.photos) photos.push(await toJpegData(p.blob));
-    msg.textContent="กำลังบันทึกรายงาน…";
+    msg.textContent="กำลังบันทึกรายงาน…"; busyTxt("กำลังบันทึกลงระบบ…");
     const r=await call("submit",{
       siteSeq:site.seq, siteName:site.name, prov:site.prov,
       stage:f.stage, status:f.status, note:f.note,
       empId:f.emp.id, empName:f.emp.name, empDept:f.emp.dept,
       lat:f.geo.lat, lng:f.geo.lng, acc:f.geo.acc||0, manualGeo:!!f.geo.manual,
       libPhotos:f.photos.filter(p=>p.src==="lib").length,
+      clientId:f.clientId,
       photos, pin:state.pin||""
     });
     if(!r||!r.ok) throw new Error(r&&r.error||"บันทึกไม่สำเร็จ");
+    busyTxt("กำลังอัปเดตหน้าจอ…");
     await refresh(true);
     msg.textContent="";
     state.form={step:1,emp:f.emp,siteSeq:"",stage:"main",status:"done",note:"",photos:[],geo:f.geo};
     go("db");
-    toast("บันทึกการแจ้งสถานะเรียบร้อย");
+    toast(r.duplicate?"รายการนี้บันทึกไว้แล้ว (ระบบกันการส่งซ้ำ)":"บันทึกการแจ้งสถานะเรียบร้อย");
   }catch(e){
-    err.textContent="บันทึกไม่สำเร็จ: "+(e&&e.message||"ไม่ทราบสาเหตุ")+" — ลองกดส่งใหม่อีกครั้ง";
+    err.textContent="บันทึกไม่สำเร็จ: "+(e&&e.message||"ไม่ทราบสาเหตุ")+" — ลองกดส่งใหม่อีกครั้ง (ระบบกันการบันทึกซ้ำให้แล้ว)";
     err.hidden=false; msg.textContent="";
   }
-  btn.disabled=false;
+  busyOff(); f.sending=false; btn.disabled=false;
 }
+/* ---------- ม่านกันกดซ้ำ ---------- */
+function busyOn(txt){
+  busyOff();
+  const d=document.createElement("div"); d.id="busy";
+  d.innerHTML=`<div class="bx"><div class="sp"></div>
+    <b>${esc(txt||"กำลังบันทึก…")}</b>
+    <p>กำลังอัปโหลดรูปและบันทึกลงระบบ<br>อาจใช้เวลา 5–20 วินาที ขึ้นกับสัญญาณ</p>
+    <div class="warn">⚠️ ห้ามปิดหน้านี้ ห้ามกดย้อนกลับ และไม่ต้องกดส่งซ้ำ</div></div>`;
+  d.addEventListener("click",e=>e.stopPropagation(),true);
+  document.body.appendChild(d);
+  document.body.style.overflow="hidden";
+}
+function busyTxt(t){const b=document.querySelector("#busy b"); if(b)b.textContent=t;}
+function busyOff(){const d=document.getElementById("busy"); if(d)d.remove(); document.body.style.overflow="";}
+const newCid=()=>"c"+Date.now().toString(36)+Math.random().toString(36).slice(2,10);
+
 function toast(t){
   const d=document.createElement("div");
   d.textContent=t; d.style.cssText="position:fixed;left:50%;transform:translateX(-50%);bottom:26px;z-index:99;background:var(--ink);color:var(--ground);padding:10px 18px;border-radius:9px;font-size:13.5px;box-shadow:0 8px 24px rgba(0,0,0,.25)";
