@@ -35,7 +35,7 @@ window.addEventListener("unhandledrejection",function(e){
   __showBoot();
 });
 window.__INLINE_OK=true;
-window.__BUILD="STATIC-2026-10-06-B";
+window.__BUILD="STATIC-2026-10-06-C";
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -474,6 +474,8 @@ function siteStatus(site){
   const st={...site.base};
   live().filter(r=>r.siteSeq===site.seq).sort((a,b)=>a.ts-b.ts)
     .forEach(r=>{ st[r.stage] = r.status==="done"?1 : r.status==="progress"?0.5 : r.status==="issue"?-1 : 0; });
+  // ติดตั้งแผง/อินเวอร์เตอร์แล้วเสร็จ = อุปกรณ์ประกอบต้องแล้วเสร็จก่อนอยู่แล้ว จึงปรับให้อัตโนมัติ
+  if(st.main===1) st.accy=1;
   return st;
 }
 const lvlPill=v=> v===1?['p-ok','✅ แล้วเสร็จ'] : v===0.5?['p-warn','🔄 กำลังดำเนินการ'] : v===-1?['p-crit','⚠️ มีปัญหา'] : ['p-idle','⬜ ยังไม่ดำเนินการ'];
