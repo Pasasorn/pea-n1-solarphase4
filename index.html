@@ -35,7 +35,7 @@ window.addEventListener("unhandledrejection",function(e){
   __showBoot();
 });
 window.__INLINE_OK=true;
-window.__BUILD="STATIC-2026-10-06-A";
+window.__BUILD="STATIC-2026-10-06-B";
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -588,7 +588,7 @@ function renderOverview(){
       <td class="num"><b>${fdate(dueOf(r.s))}</b>${dueTag(r.s)}
         ${dueMoved(r.s)?`<div style="font-size:11.5px;color:var(--ink-3);text-decoration:line-through">เดิม ${fdate(r.s.due)}</div>`:""}</td>
       <td><span class="pill ${cls}">${txt}</span></td>
-      <td>${(()=>{const[c,t]=lvlPill(r.st.accy);return `<span class="pill ${c}">${t}</span>`;})()}</td>
+      <td>${(()=>{const[c,t]=lvlPill(r.st.main);return `<span class="pill ${c}">${t}</span>`;})()}</td>
       <td style="white-space:nowrap"><button class="btn" data-quick="${r.s.seq}">แจ้งสถานะ</button>
         <button class="btn" data-setdue="${r.s.seq}" style="margin-left:5px">🗓️ เลื่อนกำหนด</button></td></tr>`;
   }).join("");
@@ -597,7 +597,7 @@ function renderOverview(){
   <div class="sec"><h2>ความคืบหน้าตามขั้นตอนงาน</h2><span class="note">อัปเดตจากการแจ้งหน้างานแบบเรียลไทม์</span></div>
   <div class="card pad">${stageBars}</div>
   <div class="sec"><h2>🔥 ต้องเร่งดำเนินการ</h2><span class="note">ทุกแห่งที่ยังติดตั้งแผงไม่แล้วเสร็จ <b class="num">${urgent.length}</b> แห่ง · เรียงตามวันครบกำหนดที่ใกล้ที่สุด${urgent.filter(r=>dueMoved(r.s)).length?` · <span class="pill p-warn" style="font-size:11px">เลื่อนกำหนดแล้ว ${urgent.filter(r=>dueMoved(r.s)).length} แห่ง</span>`:""}</span></div>
-  <div class="card tablewrap"><table><thead><tr><th>การไฟฟ้า / สถานที่</th><th>ครบกำหนด</th><th>สถานะเวลา</th><th>อุปกรณ์ประกอบ</th><th></th></tr></thead>
+  <div class="card tablewrap"><table><thead><tr><th>การไฟฟ้า / สถานที่</th><th>ครบกำหนด</th><th>สถานะเวลา</th><th>☀️ ติดตั้งแผง/อินเวอร์เตอร์</th><th></th></tr></thead>
   <tbody>${urg||`<tr><td colspan="5" class="empty">ติดตั้งครบทุกแห่งแล้ว</td></tr>`}</tbody></table></div>
   <div class="sec"><h2>📋 รายการทั้งหมด 36 แห่ง</h2><span class="note">เก็บหลักฐานรูปถ่าย + พิกัด เฉพาะขั้น “ติดตั้งแผง/อินเวอร์เตอร์” ${noProofCount()?`&mdash; <span class="noproof">${noProofCount()} แห่งยังไม่มีหลักฐาน</span> (ป้ายเส้นประ + เครื่องหมาย *)`:"&mdash; ทุกแห่งที่ติดตั้งแผงแล้วเสร็จ มีรูปถ่ายยืนยันครบ"}</span></div>
   ${filterBar()}
